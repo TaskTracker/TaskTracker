@@ -1,0 +1,102 @@
+﻿<Window x:Class="PMgo.Tasks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tasks" Height="754" Width="1394" WindowStyle="ThreeDBorderWindow" FontFamily="Segoe UI Light" WindowState="Maximized">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="1025" Margin="10,10,0,0" VerticalAlignment="Top" Width="2302">
+            <TabItem Header="Tasks" Margin="-2,-2,-113,-38" FontSize="36">
+                <Grid Background="#FF5F9AD4" Margin="0,38,0,-38">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="11*"/>
+                        <ColumnDefinition Width="1137*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="taskIdField" HorizontalAlignment="Left" Height="59" Margin="120,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" FontSize="22" Grid.Column="1">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="taskNameField" HorizontalAlignment="Left" Height="59" Margin="120,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" FontSize="22" Grid.Column="1">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="taskDescField" HorizontalAlignment="Left" Height="128" Margin="120,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" FontSize="22" Grid.Column="1">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <ListBox x:Name="progressListBox" HorizontalAlignment="Left" Height="171" Margin="120,411,0,0" VerticalAlignment="Top" Width="798" Grid.Column="1" SelectionChanged="commentListBox_SelectionChanged" FontSize="22">
+                        <ListBox.Effect>
+                            <DropShadowEffect/>
+                        </ListBox.Effect>
+                    </ListBox>
+                    <TextBox x:Name="startDateField" HorizontalAlignment="Left" Height="59" Margin="120,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" FontSize="22" Grid.Column="1">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="dueDateField" HorizontalAlignment="Left" Height="59" Margin="524,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293" FontSize="22" Grid.Column="1">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Label Content="Task ID" HorizontalAlignment="Left" Height="59" Margin="5,87,0,0" VerticalAlignment="Top" Width="89" FontSize="24" Grid.Column="1"/>
+                    <Label Content="Task Name" HorizontalAlignment="Left" Height="59" Margin="3,148,0,0" VerticalAlignment="Top" Width="125" FontSize="24" Grid.Column="1"/>
+                    <Label Content="Project Name" HorizontalAlignment="Left" Height="59" Margin="485,18,0,0" VerticalAlignment="Top" Width="150" FontSize="24" Grid.Column="1"/>
+                    <Label Content="Description" HorizontalAlignment="Left" Height="59" Margin="2,247,0,0" VerticalAlignment="Top" Width="150" FontSize="24" Grid.Column="1"/>
+                    <Label Content="Progress" HorizontalAlignment="Left" Height="59" Margin="0,481,0,0" VerticalAlignment="Top" Width="107" FontSize="24" Grid.Column="1"/>
+                    <Label Content="Start Date" HorizontalAlignment="Left" Height="44" Margin="3,354,0,0" VerticalAlignment="Top" Width="122" FontSize="24" Grid.Column="1"/>
+                    <Label Content="Due Date" HorizontalAlignment="Left" Height="41" Margin="413,357,0,0" VerticalAlignment="Top" Width="106" FontSize="24" Grid.Column="1" RenderTransformOrigin="0.482,0.221"/>
+                    <Label Content="Assigned Tasks" HorizontalAlignment="Left" Height="59" Margin="475,72,0,0" VerticalAlignment="Top" Width="169" FontSize="24" Grid.Column="1"/>
+                    <Label Content="Other Users" HorizontalAlignment="Left" Height="59" Margin="1091,1,0,0" VerticalAlignment="Top" Width="169" FontSize="24" Grid.Column="1"/>
+                    <Button Content="New Progress" Grid.Column="1" HorizontalAlignment="Left" Margin="927,417,0,0" VerticalAlignment="Top" Width="251" Click="Button_Click_2" Height="52" RenderTransformOrigin="3.502,-2.577" >
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <TextBox x:Name="userNameField" HorizontalAlignment="Left" Height="59" Margin="120,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343" FontSize="36" Grid.Column="1" Text="Chad Branton">
+                        <TextBox.Effect>
+                            <DropShadowEffect/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Label Content="User" HorizontalAlignment="Left" Height="59" Margin="14,28,0,0" VerticalAlignment="Top" Width="67" FontSize="24" Grid.Column="1"/>
+                    <ComboBox x:Name="projNameBox" Grid.Column="1" HorizontalAlignment="Left" Margin="645,13,0,0" VerticalAlignment="Top" Width="315" SelectionChanged="projNameBox_SelectionChanged" FontSize="24" SelectedIndex="0" Height="57">
+                        <ComboBox.Effect>
+                            <DropShadowEffect/>
+                        </ComboBox.Effect>
+                    </ComboBox>
+                    <Button Content="Back" Grid.Column="1" HorizontalAlignment="Left" Margin="927,478,0,0" VerticalAlignment="Top" Width="251" Click="Button_Click_1" Height="52" RenderTransformOrigin="2.534,-0.269">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <ComboBox x:Name="taskListBox" Grid.Column="1" HorizontalAlignment="Left" Margin="646,73,0,0" VerticalAlignment="Top" Width="315" SelectionChanged="taskListBox_SelectionChanged" Height="57" FontSize="22">
+                        <ComboBox.Effect>
+                            <DropShadowEffect/>
+                        </ComboBox.Effect>
+                    </ComboBox>
+                    <ListView x:Name="usersListBox" Grid.Column="1" HorizontalAlignment="Left" Height="301" Margin="1011,39,0,0" VerticalAlignment="Top" Width="314" Background="Black" Foreground="White" FontSize="22">
+                        <ListView.Effect>
+                            <DropShadowEffect/>
+                        </ListView.Effect>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" Margin="112,0,-223,-34">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="111*"/>
+                        <ColumnDefinition Width="16*"/>
+                        <ColumnDefinition Width="2169*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
