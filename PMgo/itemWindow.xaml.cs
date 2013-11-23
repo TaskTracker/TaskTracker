@@ -28,8 +28,7 @@ namespace PMgo
         {
             InitializeComponent();            
             this.ProjectNameValue = this.projNameBox.Text;
-            
-
+            expandTreeView(ItemTreeView);
             
         }
 
@@ -42,6 +41,7 @@ namespace PMgo
                 _theValue = value;
                 this.projNameBox.Text = _theValue;
                 PopulateTreeView();
+                expandTreeView(ItemTreeView);
             }
 
         }
@@ -320,6 +320,8 @@ namespace PMgo
                 }
                 #endregion
 
+                
+
             }
             catch (Exception ex)
             {
@@ -333,9 +335,63 @@ namespace PMgo
 
         }
 
+        void expandTreeView(TreeView tv)
+        {
+            ItemCollection ic = tv.Items;
+            
+            foreach (TreeViewItem item in ic)
+            {
+                item.IsExpanded = true;
+                                
+            }
+        }
+
+        
+
         private void refresh_Click(object sender, RoutedEventArgs e)
         {
             //PopulateTreeView();
+        }
+
+        private void TreeView_OnSelectedItemChanged(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            try
+            {
+                TreeViewItem item = ItemTreeView.SelectedItem as TreeViewItem;
+
+                conn.Open();
+                string query = "select * from milestones where milestone_name = '" + item +"';";
+                MessageBox.Show("Item selected: " + item.Header, Title);
+                 
+                MessageBox.Show(query);
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                //createCommand.ExecuteNonQuery();
+                SQLiteDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string name = dr.GetString(1);
+                    string desc = dr.GetString(2);
+                    string start = dr.GetString(3);
+                    string end = dr.GetString(4);
+
+                    nameBox.Text = name;
+                    descriptionBox.Text = desc;
+                    startBox.Text = start;
+                    endBox.Text = end;
+
+                }
+                
+                
+
+                //userNameBox.Items.Clear();
+                //fill_userBox();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         

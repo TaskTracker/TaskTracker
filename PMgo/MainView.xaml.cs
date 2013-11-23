@@ -28,6 +28,7 @@ namespace PMgo
 			this.projectNameField.Text = name;
 			//fillProgressBar();
 			PopulateTreeView();
+            expandTreeView(ProjectTreeView);
 		   
 		}
 		string dbConnectionString = "Data Source=PMgo.sqlite;Version=3;";
@@ -234,6 +235,7 @@ namespace PMgo
 							//Since a subtask doesn't have anything under it, we can automatically set its Maximum to 1;
 							ProgressBar subProgress = new ProgressBar();
 							subProgress.Width = 150;
+                            subProgress.Foreground = Brushes.SkyBlue;
 							subProgress.Maximum = 1;
 
 							//If the current Subtask is complete
@@ -282,6 +284,7 @@ namespace PMgo
 
 						ProgressBar taskProgress = new ProgressBar();
 						taskProgress.Width = 150;
+                        taskProgress.Foreground = Brushes.SteelBlue;
 						if (Subtasks.Count > 0)
 						{
 							taskProgress.Maximum = subProgressMaximum;
@@ -331,6 +334,7 @@ namespace PMgo
 
 					ProgressBar milestoneProgress = new ProgressBar();
 					milestoneProgress.Width = 150;
+                    milestoneProgress.Foreground = Brushes.MidnightBlue;
 					if (Tasks.Count > 0)
 					{
 						milestoneProgress.Maximum = taskProgressMaximum;
@@ -384,6 +388,17 @@ namespace PMgo
             //progressBar_txt.VerticalAlignment = System.Windows.VerticalAlignment.Center;
 
 		}
+
+        void expandTreeView(TreeView tv)
+        {
+            ItemCollection ic = tv.Items;
+
+            foreach (TreeViewItem item in ic)
+            {
+                item.IsExpanded = true;
+                
+            }
+        }
 
 		private void Button_Click_3(object sender, RoutedEventArgs e)
 		{

@@ -270,12 +270,12 @@ namespace PMgo
 
                 if (type_combo.SelectedItem == "Task")
                 {
-                    string query = "insert into tasks(proj_id, task_name, task_description, task_start, task_end) values((select project_id from projects where project_name = '" + this.project_txt.Text + "'), '"
+                    string query = "insert into tasks(proj_id, task_name, task_description, task_start, task_end, milestone_id) values((select project_id from projects where project_name = '" + this.project_txt.Text + "'), '"
                                                                 + this.nameBox.Text
                                                                 + "', '" + this.descriptionBox.Text
                                                                 + "', '" + this.startBox.Text
                                                                 + "', '" + this.endBox.Text
-                                                                + "');";
+                                                                + "', (select milestone_id from milestones where milestone_name = '" + this.parent_combo.SelectedItem + "')) ;";
                     MessageBox.Show(query);
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();

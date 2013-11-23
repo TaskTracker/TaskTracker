@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="itemWindow" Height="621.951" Width="1226.233" WindowStartupLocation="CenterScreen" Background="#FFFDFDFD">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="157" Source="egi-consulting-project-management.jpg" RenderTransformOrigin="-0.226,0.407" Margin="986,0,0,0"/>
+        <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="157" Source="egi-consulting-project-management.jpg" RenderTransformOrigin="-0.226,0.407" Margin="986,27,0,0"/>
         <Button x:Name="submit_btn" Content="Save" HorizontalAlignment="Left" Height="34" Margin="13,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -38,8 +38,9 @@
         <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="18,198,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
         <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="322,198,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
         <Button Content="&lt;-Remove" HorizontalAlignment="Left" Margin="241,430,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
-        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="669,130,0,0" VerticalAlignment="Top" Width="442"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Height="34" Margin="13,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
+        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="669,130,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged"/>      
+        
+            <Button Content="Edit" HorizontalAlignment="Left" Height="34" Margin="13,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0"/>
@@ -75,7 +76,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="projNameBox" HorizontalAlignment="Left" Height="56" Margin="669,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" FontSize="36"/>
+        <TextBlock x:Name="projNameBox" HorizontalAlignment="Left" Height="56" Margin="669,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" FontSize="36"/>
         <Label Content="Available Users&#xA;" HorizontalAlignment="Left" Height="39" Margin="78,299,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
         <Label Content="Assigned&#xA;" HorizontalAlignment="Left" Height="39" Margin="408,299,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
         <ComboBox x:Name="CreateComboBox" HorizontalAlignment="Left" Margin="669,509,0,0" VerticalAlignment="Top" Width="176" Height="34" Text="Create" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Create milestone, task or subtask" Tag="Create" SelectionChanged="ComboBox_SelectionChanged_1" Initialized="CreateComboBox_Initialized" >
