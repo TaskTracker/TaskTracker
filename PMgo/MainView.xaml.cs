@@ -380,8 +380,9 @@ namespace PMgo
 				if (conn.State == System.Data.ConnectionState.Open)
 					conn.Close();
 			}
+            int percent = 0;
             String Text1;
-            int percent = (int)(((double)(projectProgress.Value - projectProgress.Minimum) /
+            percent = (int)(((double)(projectProgress.Value - projectProgress.Minimum) /
                 (double)(projectProgress.Maximum - projectProgress.Minimum)) * 100);
             Text1 = percent.ToString() + "% Complete";
             progressBar_txt.Text = Text1;
