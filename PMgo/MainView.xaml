@@ -17,7 +17,7 @@
                     <DropShadowEffect/>
                 </ProgressBar.Effect>
             </ProgressBar>
-            <TextBlock x:Name="progressBar_txt" HorizontalAlignment="Left" Margin="437,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.484,0.377" Height="59" FontSize="20" FontWeight="Bold" Width="64" Panel.ZIndex="1"/>
+            <TextBlock x:Name="progressBar_txt" HorizontalAlignment="Left" Margin="390,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.484,0.377" Height="59" FontSize="20" FontWeight="Bold" Width="136" Panel.ZIndex="1"/>
             <Button Content="Button" HorizontalAlignment="Left" Margin="917,347,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         </Grid>
         <TreeView x:Name="ProjectTreeView" HorizontalAlignment="Left" Height="290" Margin="190,222,0,0" VerticalAlignment="Top" Width="541"/>

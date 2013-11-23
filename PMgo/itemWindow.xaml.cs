@@ -24,11 +24,11 @@ namespace PMgo
     {
         string dbConnectionString = "Data Source=PMgo.sqlite;Version=3;";
 
-        public itemWindow(String name)
+        public itemWindow()
         {
-            InitializeComponent();
-            PopulateTreeView();
-            this.ProjectNameValue = name;
+            InitializeComponent();            
+            this.ProjectNameValue = this.projNameBox.Text;
+            
 
             
         }
@@ -40,7 +40,8 @@ namespace PMgo
             set
             {
                 _theValue = value;
-                //this.project_txt.Text = value;
+                this.projNameBox.Text = _theValue;
+                PopulateTreeView();
             }
 
         }
@@ -184,6 +185,7 @@ namespace PMgo
                             //Set its Width
                             //Since a subtask doesn't have anything under it, we can automatically set its Maximum to 1;
                             ProgressBar subProgress = new ProgressBar();
+                            subProgress.Foreground = Brushes.SkyBlue;
                             subProgress.Width = 150;
                             subProgress.Maximum = 1;
 
@@ -232,6 +234,7 @@ namespace PMgo
                         taskName.Width = 200;
 
                         ProgressBar taskProgress = new ProgressBar();
+                        taskProgress.Foreground = Brushes.SteelBlue;
                         taskProgress.Width = 150;
                         if (Subtasks.Count > 0)
                         {
@@ -264,6 +267,7 @@ namespace PMgo
 
                         taskProgressValue = taskProgressValue + (int)taskProgress.Value;
                         taskProgressMaximum = taskProgressMaximum + (int)taskProgress.Maximum;
+                        
 
                     #endregion
                     }
@@ -275,13 +279,14 @@ namespace PMgo
                     currentMilestone.Margin = new Thickness(0, 10, 0, 0);
                     StackPanel milestoneHeader = new StackPanel();
                     milestoneHeader.Orientation = Orientation.Horizontal;
-
+                    
                     TextBlock milestoneName = new TextBlock();
                     milestoneName.Text = Milestones[i].name;
                     milestoneName.Width = 200;
 
                     ProgressBar milestoneProgress = new ProgressBar();
                     milestoneProgress.Width = 150;
+                    milestoneProgress.Foreground = Brushes.MidnightBlue;
                     if (Tasks.Count > 0)
                     {
                         milestoneProgress.Maximum = taskProgressMaximum;
@@ -330,7 +335,7 @@ namespace PMgo
 
         private void refresh_Click(object sender, RoutedEventArgs e)
         {
-            PopulateTreeView();
+            //PopulateTreeView();
         }
 
         

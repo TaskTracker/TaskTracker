@@ -381,7 +381,7 @@ namespace PMgo
                 (double)(projectProgress.Maximum - projectProgress.Minimum)) * 100);
             Text1 = percent.ToString() + "% Complete";
             progressBar_txt.Text = Text1;
-            progressBar_txt.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+            //progressBar_txt.VerticalAlignment = System.Windows.VerticalAlignment.Center;
 
 		}
 
@@ -408,8 +408,11 @@ namespace PMgo
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            itemWindow itemView = new itemWindow(ProjectNameValue);
-            itemView.ShowDialog();
+            String project_name = this.projectNameField.Text;
+            //MessageBox.Show(project_name);
+            itemWindow itemWin = new itemWindow();
+            itemWin.ProjectNameValue = project_name;
+            itemWin.ShowDialog();
         }
 
  
