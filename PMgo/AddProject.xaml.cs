@@ -92,7 +92,7 @@ namespace PMgo
                                                                                      + "', '" + this.startField.Text
                                                                                      + "', '" + this.endField.Text
                                                                                      + "', '" + this.descriptionField.Text + "')";
-                string query2 = "insert into milestones(milestone_name, milestone_desc, milestone_start, milestone_end, project_id) values('" + this.projNameField.Text + "_Start', 'Start Milestone', '" + this.startField + "','test', (select project_id from projects where project_name = '" + this.projNameField.Text + "'));";
+                string query2 = "insert into milestones(milestone_name, milestone_desc, milestone_start, milestone_end, project_id) values('" + this.projNameField.Text + " Start', 'Start Milestone', '" + this.startField + "','test', (select project_id from projects where project_name = '" + this.projNameField.Text + "'));";
                 MessageBox.Show(query2);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 SQLiteCommand createCommand2 = new SQLiteCommand(query2, conn);                
