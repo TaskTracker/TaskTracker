@@ -156,7 +156,7 @@ namespace PMgo
 					string name = (string)MilestonesRead.GetString(1);
 					string desc = (string)MilestonesRead.GetString(2);
 					bool complete = (bool)MilestonesRead.GetFieldValue<bool>(5);
-					Milestones.Add(new ProjectItem(id, name, desc, complete));
+					Milestones.Add(new ProjectItem(id, ProjectItemType.MILESTONE, name, desc, complete));
 				}
 
 				//loop through the pulled milestones
@@ -180,7 +180,7 @@ namespace PMgo
 						string tdesc = (string)TasksRead.GetString(3);
 
 						bool tcomplete = (int)TasksRead.GetDouble(6) == 1;
-						Tasks.Add(new ProjectItem(tid, tname, tdesc, tcomplete));
+						Tasks.Add(new ProjectItem(tid, ProjectItemType.TASK, tname, tdesc, tcomplete));
 					}
 
 
@@ -203,7 +203,7 @@ namespace PMgo
 							string name = (string)SubtasksRead.GetString(2);
 							string desc = (string)SubtasksRead.GetString(3);
 							bool complete = (bool)SubtasksRead.GetFieldValue<bool>(6);
-							Subtasks.Add(new ProjectItem(id, name, desc, complete));
+							Subtasks.Add(new ProjectItem(id, ProjectItemType.SUBTASK, name, desc, complete));
 						}
 
 						//loop through the subtasks
@@ -220,6 +220,7 @@ namespace PMgo
 							//create a new StackPanel, set its Orientation to Horizontal, give it a little bit of a margin
 							//to separate it from other items
 							currentSubtask.Margin = new Thickness(0, 10, 0, 0);
+							currentSubtask.Tag = Subtasks[k];
 							StackPanel subHeader = new StackPanel();
 							subHeader.Orientation = Orientation.Horizontal;
 
@@ -275,6 +276,7 @@ namespace PMgo
 
 
 						currentTask.Margin = new Thickness(0, 10, 0, 0);
+						currentTask.Tag = Tasks[j];
 						StackPanel taskHeader = new StackPanel();
 						taskHeader.Orientation = Orientation.Horizontal;
 
@@ -325,6 +327,7 @@ namespace PMgo
 
 
 					currentMilestone.Margin = new Thickness(0, 10, 0, 0);
+					currentMilestone.Tag = Milestones[i];
 					StackPanel milestoneHeader = new StackPanel();
 					milestoneHeader.Orientation = Orientation.Horizontal;
 
@@ -434,19 +437,23 @@ namespace PMgo
  
 	}
 
+
+	enum ProjectItemType {MILESTONE, TASK, SUBTASK}
 	class ProjectItem
 	{
 		public int id { get; set; }
 		public String name { get; set; }
 		public String description { get; set; }
 		public bool complete { get; set; }
+		public ProjectItemType Type { get; set; }
 
-		public ProjectItem(int i, String n, String d, bool c)
+		public ProjectItem(int i, ProjectItemType t, String n, String d, bool c)
 		{
 			this.id = i;
 			this.name = n;
 			this.description = d;
 			this.complete = c;
+			this.Type = t;
 		}
 	}
 
