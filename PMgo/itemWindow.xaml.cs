@@ -469,7 +469,7 @@ namespace PMgo
 					case ProjectItemType.SUBTASK:
 						//search database for a subtask
 						table = "subtask";
-						nameIndex = 2;
+                        nameIndex = 2;
 						descIndex = 3;
 						startIndex = 4;
 						endIndex = 5;
@@ -497,8 +497,7 @@ namespace PMgo
                     endBox.Text = end;
                     typeBox.Text = table;
                     statusButtons();
-                }
-                
+                }              
                 
 
                 //userNameBox.Items.Clear();
@@ -557,7 +556,14 @@ namespace PMgo
 
         private void submit_btn_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(CreateComboBox.SelectedItem.ToString());
+            if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Milestone")
+            {
+                String projectName = this.projNameBox.Text;
+                createMilestone mile = new createMilestone();
+                mile.ProjectValue = projectName;
+                mile.ShowDialog();
+                this.Close();
+            }
             if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Task")
             {
                 String projectName = this.projNameBox.Text;
@@ -599,6 +605,71 @@ namespace PMgo
             }
             
             
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            try
+            {
+
+                if (this.typeBox.Text == "task")
+                {
+                    MessageBoxResult result = MessageBox.Show("Are you sure you want to Delete this Task?", "Delete Confirmation", MessageBoxButton.YesNo);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        conn.Open();
+                        string query = "delete from tasks where task_name = '" + this.nameBox.Text + "' and proj_id = (select project_id from projects where project_name = '" + this.projNameBox.Text + "')";
+
+                        SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                        createCommand.ExecuteNonQuery();
+                        MessageBox.Show("Item has been deleted!");
+                        conn.Close();
+                        this.Close();
+                        string projectName = this.projNameBox.Text;
+                        itemWindow update = new itemWindow();
+                        update.ProjectNameValue = projectName;
+                        update.ShowDialog();
+
+                        this.Close();
+                    }
+                    
+                    
+                }
+                else if (this.typeBox.Text == "subtask")
+                {
+                    MessageBoxResult result = MessageBox.Show("Are you sure you want to Delete this subtask?", "Delete Confirmation", MessageBoxButton.YesNo);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        conn.Open();
+                        string query = "delete from subtasks where subtask_name = '" + this.nameBox.Text + "';";
+
+                        SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                        createCommand.ExecuteNonQuery();
+                        MessageBox.Show("Item has been deleted!");
+                        conn.Close();
+                        this.Close();
+                        string projectName = this.projNameBox.Text;
+                        itemWindow update = new itemWindow();
+                        update.ProjectNameValue = projectName;
+                        update.ShowDialog();
+
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("test");
+                }
+                
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         

@@ -86,6 +86,9 @@
     <Compile Include="createItem.xaml.cs">
       <DependentUpon>createItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="createMilestone.xaml.cs">
+      <DependentUpon>createMilestone.xaml</DependentUpon>
+    </Compile>
     <Compile Include="createSubtask.xaml.cs">
       <DependentUpon>createSubtask.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="createItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="createMilestone.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

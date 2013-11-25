@@ -62,7 +62,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="cancel_btn_Copy" Content="Delete" HorizontalAlignment="Left" Height="34" Margin="287,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="cancel_btn_Click">
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Height="34" Margin="287,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="deleteButton_Click" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
