@@ -555,12 +555,43 @@ namespace PMgo
 
         private void submit_btn_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            String projectName = this.projNameBox.Text;
-           
-            createItem item = new createItem();
-            item.ProjectValue = projectName; 
-            item.ShowDialog();
-            this.Close();
+            MessageBox.Show(CreateComboBox.SelectedItem.ToString());
+            if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Task")
+            {
+                String projectName = this.projNameBox.Text;
+                createItem item = new createItem();
+                item.ProjectValue = projectName;
+                item.ShowDialog();
+                this.Close();
+            }
+
+            else if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Subtask")
+            {
+                if (this.nameBox.Text == "")
+                {
+                    MessageBox.Show("You must first choose a task!");
+                }
+                else if (this.typeBox.Text != "task")
+                {
+                    MessageBox.Show("This is not a task.  Please Choose a task to add a subtask to.");
+                }
+                else
+                {
+                    String projectName = this.projNameBox.Text;
+                    String taskName = this.nameBox.Text;
+                    createSubtask subtask = new createSubtask();
+                    subtask.ProjectValue = projectName;
+                    subtask.TaskValue = taskName;
+                    subtask.ShowDialog();
+                    this.Close();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("You must first choose an item to create");
+            }
+            
             
         }
 

@@ -110,5 +110,10 @@ namespace PMgo
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void nameBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
