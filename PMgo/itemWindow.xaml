@@ -89,6 +89,9 @@
             <ComboBoxItem Content="Task" ToolTip="Add task to current milestone"/>
             <ComboBoxItem Content="Subtask" ToolTip="Add subtask to current task"/>
         </ComboBox>
+        <Button x:Name="completeButton" Content="Complete!" HorizontalAlignment="Left" Height="35" Margin="392,259,0,0" VerticalAlignment="Top" Width="146" Click="Button_Click_2" FontSize="20" Background="#FF129312" FontFamily="Segoe Script"/>
+        <Button x:Name="notCompleteButton" Content="Mark Complete" HorizontalAlignment="Left" Height="35" Margin="392,259,0,0" VerticalAlignment="Top" Width="146" Click="Button_Click_2" FontSize="18" Background="#FFE21D13"/>
+        <TextBlock x:Name="typeBox" HorizontalAlignment="Left" Height="39" Margin="520,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Visibility="Visible"/>
 
     </Grid>
 </Window>

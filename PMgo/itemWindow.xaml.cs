@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 using System.Data.SQLite;
 using System.Data;
 
@@ -29,7 +28,7 @@ namespace PMgo
             InitializeComponent();            
             this.ProjectNameValue = this.projNameBox.Text;
             expandTreeView(ItemTreeView);
-            
+            //statusButtons();
         }
 
         string _theValue;
@@ -337,6 +336,53 @@ namespace PMgo
 
         }
 
+        void statusButtons()
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+            // open connection to database
+            try
+            {
+                conn.Open();
+
+                string Query = "";
+                if (this.typeBox.Text == "task")
+                {
+                    Query = "select complete from tasks where task_id = (select task_id where task_name = '" + this.nameBox.Text + "');";
+                }
+                else if (this.typeBox.Text == "milestone")
+                {
+                    Query = "select complete from milestones where milestone_id = (select milestone_id where milestone_name = '" + this.nameBox.Text + "');";
+                }
+                else if (this.typeBox.Text == "subtask")
+                {
+                    Query = "select complete from subtasks where subtask_id = (select subtask_id where subtask_name = '" + this.nameBox.Text + "');";
+                }              
+                SQLiteCommand createCommand = new SQLiteCommand(Query, conn);
+                SQLiteDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    int complete = dr.GetInt32(0);
+                    if (complete == 0)
+                    {
+                        this.completeButton.Visibility = Visibility.Hidden;
+                        this.notCompleteButton.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        this.completeButton.Visibility = Visibility.Visible;
+                        this.notCompleteButton.Visibility = Visibility.Hidden;
+                    }
+                }
+                
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
+        }
+
         void expandTreeView(TreeView tv)
         {
             ItemCollection ic = tv.Items;
@@ -396,9 +442,9 @@ namespace PMgo
 
                 conn.Open();
                 string query = "select * from "+ table +"s where "+ table +"_id = '" + projectItem.id +"';";
-                MessageBox.Show("Item selected: " + item.Header +"\nItem Type: " + projectItem.Type, Title);
+                //MessageBox.Show("Item selected: " + item.Header +"\nItem Type: " + projectItem.Type, Title);
                  
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();
@@ -413,7 +459,8 @@ namespace PMgo
                     descriptionBox.Text = desc;
                     startBox.Text = start;
                     endBox.Text = end;
-
+                    typeBox.Text = table;
+                    statusButtons();
                 }
                 
                 
@@ -421,6 +468,45 @@ namespace PMgo
                 //userNameBox.Items.Clear();
                 //fill_userBox();
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+            // open connection to database
+            try
+            {
+                conn.Open();
+                string Query = "";
+                if (this.typeBox.Text == "task")
+                {
+                    Query = "update tasks set complete = 1 where task_id = (select task_id where task_name = '" + this.nameBox.Text + "');";
+                }
+                else if (this.typeBox.Text == "milestone")
+                {
+                    Query = "update milestones set complete = 1 where milestone_id = (select milestone_id where milestone_name = '" + this.nameBox.Text + "');";
+                }
+                else if (this.typeBox.Text == "subtask")
+                {
+                    Query = "update subtasks set complete = 1 where subtask_id = (select subtask_id where subtask_name = '" + this.nameBox.Text + "');";
+                }                
+
+                SQLiteCommand createcommand = new SQLiteCommand(Query, conn);
+                createcommand.ExecuteNonQuery();
+                MessageBox.Show("Item is now complete!");
+                this.notCompleteButton.Visibility = Visibility.Hidden;
+                PopulateTreeView();
+                expandTreeView(ItemTreeView);
+                
+
+                
+                conn.Close();
             }
             catch (Exception ex)
             {
