@@ -37,7 +37,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <ListBox x:Name="userNameBox" HorizontalAlignment="Left" Height="352" Margin="772,103,0,0" VerticalAlignment="Top" Width="290" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18" FontFamily="Segoe UI Light" Background="Black" Foreground="White">
+        <ListBox x:Name="userNameBox" HorizontalAlignment="Left" Height="352" Margin="772,103,0,0" VerticalAlignment="Top" Width="290" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18" FontFamily="Segoe UI Light" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Foreground="White">
             <ListBox.Effect>
                 <DropShadowEffect/>
             </ListBox.Effect>
