@@ -28,9 +28,11 @@ namespace PMgo
             InitializeComponent();            
             fillUserBox();
             this.ProjectNameValue = this.projNameBox.Text;
-            expandTreeView(ItemTreeView);
             PopulateTreeView();
-            this.completeButton.Visibility = Visibility.Hidden;
+
+			//need to populate the treeview before expaninding it.
+            expandTreeView(ItemTreeView);
+			this.completeButton.Visibility = Visibility.Hidden;
             this.notCompleteButton.Visibility = Visibility.Hidden;
         }
 
@@ -562,7 +564,11 @@ namespace PMgo
                 createItem item = new createItem();
                 item.ProjectValue = projectName;
                 item.ShowDialog();
-                this.Close();
+                //this.Close();
+
+				//after the createItem window closes:
+				PopulateTreeView();
+				expandTreeView(ItemTreeView);
             }
 
             else if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Subtask")

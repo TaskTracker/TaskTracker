@@ -97,10 +97,17 @@ namespace PMgo
                 MessageBox.Show("Task Was Added!");             
                 
                 conn.Close();
-                string projectName = this.projectNameBox.Text;
-                itemWindow update = new itemWindow();
-                update.ProjectNameValue = projectName;
-                update.ShowDialog();
+
+
+				//not necessary if we don't close the original one
+				//so we just need to update it
+				
+                //string projectName = this.projectNameBox.Text;
+                //itemWindow update = new itemWindow();
+                //update.ProjectNameValue = projectName;
+                //update.ShowDialog();
+
+				
                 
                 this.Close();
 
