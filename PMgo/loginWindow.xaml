@@ -8,7 +8,15 @@
             <GradientStop Color="#FFFBF8F8"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFBFDBEE" Offset="0"/>
+                <GradientStop Color="#FFD5E1E4" Offset="1"/>
+                <GradientStop Color="#FFEAE5EE" Offset="0.527"/>
+                <GradientStop Color="#FFF8F9F9" Offset="0.979"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <PasswordBox x:Name="passwordField" HorizontalAlignment="Left" Margin="421,302,0,0" VerticalAlignment="Top" Width="291" Height="77" FontSize="20">
             <PasswordBox.Effect>
                 <DropShadowEffect/>
@@ -19,23 +27,23 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="317,240,0,0" VerticalAlignment="Top" Height="53" Width="89" FontSize="20" FontFamily="Segoe UI Light"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="287,319,0,0" VerticalAlignment="Top" Height="53" Width="110" FontSize="20" FontFamily="Segoe UI Light"/>
-        <Button Content="Login" HorizontalAlignment="Left" Margin="476,424,0,0" VerticalAlignment="Top" Width="183" Height="87" FontSize="18" Click="Button_Click_1" FontFamily="Segoe UI Light">
+        <Label Content="Email" HorizontalAlignment="Left" Margin="278,240,0,0" VerticalAlignment="Top" Height="53" Width="119" FontSize="36" FontFamily="Segoe UI Light"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="238,326,0,0" VerticalAlignment="Top" Height="53" Width="159" FontSize="36" FontFamily="Segoe UI Light"/>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="476,424,0,0" VerticalAlignment="Top" Width="183" Height="87" FontSize="30" Click="Button_Click_1" FontFamily="Segoe UI Light">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
         <Label HorizontalAlignment="Left" Margin="-50,469,0,0" VerticalAlignment="Top"/>
-        <Image HorizontalAlignment="Left" Height="196" Margin="93,10,0,0" VerticalAlignment="Top" Width="238" Source="egi-consulting-project-management.jpg"/>
-        <Label Content="Welcome to TaskTracker!" HorizontalAlignment="Left" Height="80" Margin="313,49,0,0" VerticalAlignment="Top" Width="623" FontSize="48" FontFamily="Segoe UI Light">
+        <Image HorizontalAlignment="Left" Height="196" Margin="66,10,0,0" VerticalAlignment="Top" Width="238" Source="egi-consulting-project-management.jpg"/>
+        <Label Content="Welcome to TaskTracker!" HorizontalAlignment="Left" Height="80" Margin="336,47,0,0" VerticalAlignment="Top" Width="623" FontSize="50" FontFamily="Segoe UI Light">
             <Label.Effect>
-                <DropShadowEffect BlurRadius="7"/>
+                <DropShadowEffect BlurRadius="7" Color="White"/>
             </Label.Effect>
         </Label>
-        <Label Content="Project Management Solutions" HorizontalAlignment="Left" Margin="326,108,0,0" VerticalAlignment="Top" Width="244" FontSize="18" FontFamily="Segoe UI Light" Height="33">
+        <Label Content="Project Management Solutions" HorizontalAlignment="Left" Margin="336,111,0,0" VerticalAlignment="Top" Width="493" FontSize="30" FontFamily="Segoe UI Light" Height="58">
             <Label.Effect>
-                <DropShadowEffect BlurRadius="7"/>
+                <DropShadowEffect BlurRadius="7" Color="#FFF5EBEB"/>
             </Label.Effect>
         </Label>
 
