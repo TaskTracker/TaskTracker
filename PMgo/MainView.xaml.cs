@@ -128,7 +128,7 @@ namespace PMgo
 		/// <summary>
 		/// Populates the TreeView.
 		/// </summary>
-		private void PopulateTreeView()
+		public void PopulateTreeView()
 		{
 			ProjectTreeView.Items.Clear();
 			List<ProjectItem> Milestones = new List<ProjectItem>();

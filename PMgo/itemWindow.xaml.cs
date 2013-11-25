@@ -502,6 +502,7 @@ namespace PMgo
                 MessageBox.Show("Item is now complete!");
                 this.notCompleteButton.Visibility = Visibility.Hidden;
                 PopulateTreeView();
+				
                 expandTreeView(ItemTreeView);
                 
 

@@ -69,9 +69,9 @@ namespace PMgo
         private void projectField_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             String project_name = this.projectField.SelectedItem.ToString();
-            MainView main = new MainView(project_name);
+            MainView mainView = new MainView(project_name);
             
-            main.ShowDialog();
+            mainView.ShowDialog();
             
             
 
