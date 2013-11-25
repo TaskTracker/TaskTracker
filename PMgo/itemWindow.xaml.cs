@@ -25,10 +25,12 @@ namespace PMgo
 
         public itemWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            fillUserBox();
             this.ProjectNameValue = this.projNameBox.Text;
             expandTreeView(ItemTreeView);
-            //statusButtons();
+            this.completeButton.Visibility = Visibility.Hidden;
+            this.notCompleteButton.Visibility = Visibility.Hidden;
         }
 
         string _theValue;
@@ -336,15 +338,46 @@ namespace PMgo
 
         }
 
+        void fillUserBox()
+        {
+             SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
+
+            // open connection to database
+            try
+            {
+                sqliteCon.Open();
+
+                //MessageBox.Show(this.project_txt.Text);
+              string Query = "select user_name from users;";
+           
+                SQLiteCommand createcommand = new SQLiteCommand(Query, sqliteCon);
+                //MessageBox.Show(Query);
+                // createcommand.ExecuteNonQuery();
+                SQLiteDataReader dr = createcommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string name = dr.GetString(0);
+                    availableUsersBox.Items.Add(name);
+                }
+                sqliteCon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+
         void statusButtons()
         {
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
 
             // open connection to database
+            conn.Open();
             try
             {
-                conn.Open();
-
+               
                 string Query = "";
                 if (this.typeBox.Text == "task")
                 {
@@ -381,7 +414,7 @@ namespace PMgo
             {
                 MessageBox.Show(ex.Message);
             }            
-        }
+        }   
 
         void expandTreeView(TreeView tv)
         {
@@ -478,40 +511,54 @@ namespace PMgo
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to mark complete?", "Change Confirmation", MessageBoxButton.YesNo);
 
-            // open connection to database
-            try
+            if (result == MessageBoxResult.Yes)
             {
-                conn.Open();
-                string Query = "";
-                if (this.typeBox.Text == "task")
+                try
                 {
-                    Query = "update tasks set complete = 1 where task_id = (select task_id where task_name = '" + this.nameBox.Text + "');";
-                }
-                else if (this.typeBox.Text == "milestone")
-                {
-                    Query = "update milestones set complete = 1 where milestone_id = (select milestone_id where milestone_name = '" + this.nameBox.Text + "');";
-                }
-                else if (this.typeBox.Text == "subtask")
-                {
-                    Query = "update subtasks set complete = 1 where subtask_id = (select subtask_id where subtask_name = '" + this.nameBox.Text + "');";
-                }                
+                    conn.Open();
+                    string Query = "";
+                    if (this.typeBox.Text == "task")
+                    {
+                        Query = "update tasks set complete = 1 where task_id = (select task_id where task_name = '" + this.nameBox.Text + "');";
+                    }
+                    else if (this.typeBox.Text == "milestone")
+                    {
+                        Query = "update milestones set complete = 1 where milestone_id = (select milestone_id where milestone_name = '" + this.nameBox.Text + "');";
+                    }
+                    else if (this.typeBox.Text == "subtask")
+                    {
+                        Query = "update subtasks set complete = 1 where subtask_id = (select subtask_id where subtask_name = '" + this.nameBox.Text + "');";
+                    }
 
-                SQLiteCommand createcommand = new SQLiteCommand(Query, conn);
-                createcommand.ExecuteNonQuery();
-                MessageBox.Show("Item is now complete!");
-                this.notCompleteButton.Visibility = Visibility.Hidden;
-                PopulateTreeView();
-                expandTreeView(ItemTreeView);
-                
+                    SQLiteCommand createcommand = new SQLiteCommand(Query, conn);
+                    createcommand.ExecuteNonQuery();
+                    MessageBox.Show("Item is now complete!");
+                    this.notCompleteButton.Visibility = Visibility.Hidden;
+                    PopulateTreeView();
+                    expandTreeView(ItemTreeView);
 
-                
-                conn.Close();
+
+
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
+        }
+
+        private void submit_btn_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            String project_name = this.projNameBox.Text;
+           
+            createItem item = new createItem();
+            item.ProjectNameValue = project_name;           
+            
+            item.ShowDialog();
         }
 
         
