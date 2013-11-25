@@ -5,7 +5,7 @@
     <Grid>
         <Button Content="Cancel" HorizontalAlignment="Left" Margin="64,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <TextBox x:Name="nameBox" HorizontalAlignment="Left" Height="28" Margin="98,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
-        <TextBox x:Name="descBox" HorizontalAlignment="Left" Height="57" Margin="98,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBox x:Name="descBox" HorizontalAlignment="Left" Height="57" Margin="98,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}"/>
         <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="98,154,0,0" VerticalAlignment="Top"/>
         <DatePicker x:Name="endBox" HorizontalAlignment="Left" Margin="98,183,0,0" VerticalAlignment="Top"/>
         <Button Content="Create" HorizontalAlignment="Left" Margin="157,218,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
