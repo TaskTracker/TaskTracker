@@ -601,7 +601,7 @@ namespace PMgo
             }
             else
             {
-                MessageBox.Show("You must first choose an item to create");
+                MessageBox.Show("You must first choose a 'Project Item' to create");
             }
             
             
