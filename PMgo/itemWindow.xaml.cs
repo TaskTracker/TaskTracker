@@ -29,6 +29,7 @@ namespace PMgo
             fillUserBox();
             this.ProjectNameValue = this.projNameBox.Text;
             expandTreeView(ItemTreeView);
+            PopulateTreeView();
             this.completeButton.Visibility = Visibility.Hidden;
             this.notCompleteButton.Visibility = Visibility.Hidden;
         }
@@ -80,7 +81,7 @@ namespace PMgo
             CreateComboBox.SelectedValue = CreateComboBox.Items[0];
         }
 
-        private void PopulateTreeView()
+        public void PopulateTreeView()
         {
             ItemTreeView.Items.Clear();
             List<ProjectItem> Milestones = new List<ProjectItem>();
@@ -553,12 +554,13 @@ namespace PMgo
 
         private void submit_btn_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            String project_name = this.projNameBox.Text;
+            String projectName = this.projNameBox.Text;
            
             createItem item = new createItem();
-            item.ProjectNameValue = project_name;           
-            
+            item.ProjectValue = projectName; 
             item.ShowDialog();
+            this.Close();
+            
         }
 
         

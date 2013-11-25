@@ -22,28 +22,29 @@ namespace PMgo
     {
         string dbConnectionString = "Data Source=PMgo.sqlite;Version=3;";
 
-        public createItem()
-        {
-            
-            InitializeComponent();
-            projectNameBox.Text = this.ProjectNameValue;
-            fillMilestoneBox();
-            
-        }
-
 
         string _theValue;
-        public string ProjectNameValue
+        public string ProjectValue
         {
             get { return _theValue; }
             set
             {
                 _theValue = value;
                 this.projectNameBox.Text = _theValue;
-            }    
+                fillMilestoneBox();
+            }
 
         }
 
+        public createItem()
+        {
+
+            InitializeComponent();
+            this.projectNameBox.Text = ProjectValue;
+            //this.projectNameBox.Text = this.ProjectValue;
+            //fillMilestoneBox();
+
+        }
         
 
         void fillMilestoneBox()
@@ -51,9 +52,9 @@ namespace PMgo
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
             try
             {
-                this.ProjectNameValue = this.projectNameBox.Text;
+                //this.ProjectValue = this.projectNameBox.Text;
                 conn.Open();
-                string query = "select milestone_name from milestones where project_id = (select project_id from projects where project_name = '" + ProjectNameValue + "');";
+                string query = "select milestone_name from milestones where project_id = (select project_id from projects where project_name = '" + this.projectNameBox.Text + "');";
                 MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
@@ -80,7 +81,34 @@ namespace PMgo
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
 
+            try
+            {
+                conn.Open();
+                string query = "insert into tasks(proj_id, task_name, task_description, task_start, task_end, milestone_id) values((select project_id from projects where project_name = '" + this.projectNameBox.Text + "'), '"
+                                                                + this.nameBox.Text
+                                                                + "', '" + this.descBox.Text
+                                                                + "', '" + this.startBox.Text
+                                                                + "', '" + this.endBox.Text
+                                                                + "', (select milestone_id from milestones where milestone_name = '" + this.milestoneBox.SelectedItem + "')) ;";
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                createCommand.ExecuteNonQuery();
+                MessageBox.Show("Task Was Added!");             
+                
+                conn.Close();
+                string projectName = this.projectNameBox.Text;
+                itemWindow update = new itemWindow();
+                update.ProjectNameValue = projectName;
+                update.ShowDialog();
+                
+                this.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
