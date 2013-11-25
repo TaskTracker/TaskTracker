@@ -83,6 +83,9 @@
     <Compile Include="addUser.xaml.cs">
       <DependentUpon>addUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="createItem.xaml.cs">
+      <DependentUpon>createItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="itemWindow.xaml.cs">
       <DependentUpon>itemWindow.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="addUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="createItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -26,9 +26,12 @@ namespace PMgo
         public itemWindow()
         {
             InitializeComponent();            
+            fillUserBox();
             this.ProjectNameValue = this.projNameBox.Text;
             expandTreeView(ItemTreeView);
-            //statusButtons();
+            PopulateTreeView();
+            this.completeButton.Visibility = Visibility.Hidden;
+            this.notCompleteButton.Visibility = Visibility.Hidden;
         }
 
         string _theValue;
@@ -78,7 +81,7 @@ namespace PMgo
             CreateComboBox.SelectedValue = CreateComboBox.Items[0];
         }
 
-        private void PopulateTreeView()
+        public void PopulateTreeView()
         {
             ItemTreeView.Items.Clear();
             List<ProjectItem> Milestones = new List<ProjectItem>();
@@ -336,14 +339,45 @@ namespace PMgo
 
         }
 
+        void fillUserBox()
+        {
+             SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
+
+            // open connection to database
+            try
+            {
+                sqliteCon.Open();
+
+                //MessageBox.Show(this.project_txt.Text);
+              string Query = "select user_name from users;";
+           
+                SQLiteCommand createcommand = new SQLiteCommand(Query, sqliteCon);
+                //MessageBox.Show(Query);
+                // createcommand.ExecuteNonQuery();
+                SQLiteDataReader dr = createcommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    string name = dr.GetString(0);
+                    availableUsersBox.Items.Add(name);
+                }
+                sqliteCon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+
         void statusButtons()
         {
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
 
             // open connection to database
+            conn.Open();
             try
             {
-                conn.Open();
 
                 string Query = "";
                 if (this.typeBox.Text == "task")
@@ -478,8 +512,10 @@ namespace PMgo
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to mark complete?", "Change Confirmation", MessageBoxButton.YesNo);
 
-            // open connection to database
+            if (result == MessageBoxResult.Yes)
+            {
             try
             {
                 conn.Open();
@@ -513,6 +549,19 @@ namespace PMgo
             {
                 MessageBox.Show(ex.Message);
             }
+            }
+            
+        }
+
+        private void submit_btn_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            String projectName = this.projNameBox.Text;
+           
+            createItem item = new createItem();
+            item.ProjectValue = projectName; 
+            item.ShowDialog();
+            this.Close();
+            
         }
 
         
