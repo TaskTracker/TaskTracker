@@ -570,11 +570,10 @@ namespace PMgo
                 createItem item = new createItem();
                 item.ProjectValue = projectName;
                 item.ShowDialog();
-                //this.Close();
-
-				//after the createItem window closes:
-				PopulateTreeView();
+                //after the createItem window closes:
+                PopulateTreeView();
 				expandTreeView(ItemTreeView);
+            
             }
 
             else if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Subtask")

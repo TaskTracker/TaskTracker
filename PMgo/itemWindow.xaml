@@ -38,7 +38,7 @@
         <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="18,198,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
         <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="322,198,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
         <Button Content="&lt;-Remove" HorizontalAlignment="Left" Margin="241,430,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
-        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="669,130,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="669,130,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="16">
             <TreeView.Effect>
                 <DropShadowEffect/>
             </TreeView.Effect>
