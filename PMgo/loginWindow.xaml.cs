@@ -33,7 +33,7 @@ namespace PMgo
             try
             {
                 conn.Open();
-                string query = "select * from users where email = '" + this.userEmailField.Text + "' and password = '" + this.passwordField.Password + "';";
+                string query = "select * from users where user_name = '" + this.userNameField.Text + "' and password = '" + this.passwordField.Password + "';";
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();
@@ -43,8 +43,11 @@ namespace PMgo
                     count = count + 1;
                 }
                 if (count == 1)
-                {                    
+                {
+                    String user = this.userNameField.Text;
+                    
                     MainWindow start = new MainWindow();
+                    start.UserValue = user;
                     start.ShowDialog();
                     this.Close();
                 }
@@ -63,5 +66,12 @@ namespace PMgo
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void userNameField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+       
     }
 }

@@ -30,12 +30,12 @@
                     <DropShadowEffect Color="#FFF9F7F7"/>
                 </TextBlock.Effect>
             </TextBlock>
-            <Label Content="Current User:" HorizontalAlignment="Left" Margin="18,22,0,0" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}">
+            <Label Content="Current User:" HorizontalAlignment="Left" Margin="18,22,0,0" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
                 <Label.Effect>
                     <DropShadowEffect Color="#FFF9F5F5"/>
                 </Label.Effect>
             </Label>
-            <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="21" Margin="133,27,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}">
+            <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="21" Margin="122,27,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="#FFFBF5F5"/>
                 </TextBlock.Effect>

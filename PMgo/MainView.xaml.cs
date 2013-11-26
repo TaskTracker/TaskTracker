@@ -40,6 +40,22 @@ namespace PMgo
 			get;
 			set;
 		}
+
+        
+    string _theUser;
+  
+        public string UserValue
+        {
+            get { return _theUser; } 
+            set 
+            {
+                _theUser = value;
+               this.current_txt.Text = _theUser;
+            }
+
+        }
+
+
 		void fillProgressBar()
 		{
             string Text1;
@@ -430,8 +446,11 @@ namespace PMgo
         {
             String project_name = this.projectNameField.Text;
             //MessageBox.Show(project_name);
+
+            String user = this.current_txt.Text;            
             itemWindow itemWin = new itemWindow();
             itemWin.ProjectNameValue = project_name;
+            itemWin.UserValue = user;
             itemWin.ShowDialog();
         }
 

@@ -25,7 +25,19 @@ namespace PMgo
         public MainWindow()
         {
             InitializeComponent();
-            fill_projectField();
+            //fill_projectField();
+        }
+        string _theValue;
+        public string UserValue
+        {
+            get { return _theValue; } 
+            set 
+            {
+                _theValue = value;
+                this.current_txt.Text = _theValue;
+                fill_projectField();
+
+            }
         }
 
         void fill_projectField()
@@ -34,14 +46,14 @@ namespace PMgo
             try
             {
                 conn.Open();
-                string query = "select project_name, user_name from projects, users where users.id = projects.proj_mgr;";
+                string query = "select project_name from projects where proj_mgr = (select id from users where user_name = '" + this.current_txt.Text + "');";
+                MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();
                 while (dr.Read())
                 {
                     string proj_name = dr.GetString(0);
-                    string proj_mgr = dr.GetString(1);
                     projectField.Items.Add(proj_name);
                 }
 
@@ -69,14 +81,15 @@ namespace PMgo
         private void projectField_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             String project_name = this.projectField.SelectedItem.ToString();
-            
-            MainView mainView = new MainView(project_name);
-            
-            mainView.ShowDialog();
-            
-            
+            String user = this.current_txt.Text;
 
-            }
+            MainView mainView = new MainView(project_name);
+            mainView.UserValue = user;
+            mainView.ShowDialog();
+         
+         }
+
+
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {

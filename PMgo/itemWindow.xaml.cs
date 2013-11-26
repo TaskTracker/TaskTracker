@@ -37,7 +37,8 @@ namespace PMgo
         }
 
         string _theValue;
-        public string ProjectNameValue
+        
+       public string ProjectNameValue
         {
             get { return _theValue; }
             set
@@ -47,9 +48,23 @@ namespace PMgo
                 PopulateTreeView();
                 expandTreeView(ItemTreeView);
             }
-
+            
         }
-        
+    
+       string _theUser;
+             
+         public string UserValue
+             
+         {
+             get { return _theUser; }
+             set
+             {
+                 _theUser = value;
+                this.current_txt.Text = _theUser;
+             }
+
+         }
+
 
         void clearInputItems()
         {
