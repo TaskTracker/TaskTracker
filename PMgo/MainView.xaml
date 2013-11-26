@@ -24,7 +24,7 @@
                 </ProgressBar.Effect>
             </ProgressBar>
             <TextBlock x:Name="progressBar_txt" HorizontalAlignment="Left" Margin="352,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.475" Height="47" FontSize="22" FontWeight="Bold" Width="207" Panel.ZIndex="1" TextAlignment="Center" FontFamily="Segoe UI Light"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="886,347,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click_1" Height="41" FontSize="30"/>
+            <Button Content="Edit Project" HorizontalAlignment="Left" Margin="886,347,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click_1" Height="41" FontSize="30"/>
             <TextBlock x:Name="projectNameField" HorizontalAlignment="Left" Height="52" Margin="236,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" FontSize="40" TextAlignment="Center">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="#FFF9F7F7"/>

@@ -676,6 +676,21 @@ namespace PMgo
             }
         }
 
+		private void addDocumentButton_Click(object sender, RoutedEventArgs e)
+		{
+			Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+			Nullable<bool> result = dlg.ShowDialog();
+			string filename = "";
+			if (result == true)
+			{
+				filename = dlg.FileName;
+			}
+
+			AddDocumentWindow win = new AddDocumentWindow(filename);
+			
+			win.ShowDialog();
+		}
+
         
 
                 
