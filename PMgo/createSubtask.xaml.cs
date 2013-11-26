@@ -75,11 +75,7 @@ namespace PMgo
                 MessageBox.Show("Subtask Was Added!");
 
                 conn.Close();
-                string projectName = this.projectNameBox.Text;
-                itemWindow update = new itemWindow();
-                update.ProjectNameValue = projectName;
-                update.ShowDialog();
-
+//no need to create a new itemWindow since we didn't close the original
                 this.Close();
 
             }

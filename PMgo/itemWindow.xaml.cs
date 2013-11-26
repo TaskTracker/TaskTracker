@@ -562,8 +562,11 @@ namespace PMgo
                 createMilestone mile = new createMilestone();
                 mile.ProjectValue = projectName;
                 mile.ShowDialog();
-                this.Close();
-            }
+
+				//no need to close the window, just refresh it after closing the create window
+				PopulateTreeView();
+				expandTreeView(ItemTreeView);
+			}
             if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Task")
             {
                 String projectName = this.projNameBox.Text;
@@ -594,8 +597,10 @@ namespace PMgo
                     subtask.ProjectValue = projectName;
                     subtask.TaskValue = taskName;
                     subtask.ShowDialog();
-                    this.Close();
-                }
+
+					PopulateTreeView();
+					expandTreeView(ItemTreeView);
+				}
                 
             }
             else
