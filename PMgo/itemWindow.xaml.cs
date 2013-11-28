@@ -647,8 +647,10 @@ namespace PMgo
                         conn.Close();
                         this.Close();
                         string projectName = this.projNameBox.Text;
+                        string username = this.current_txt.Text;
                         itemWindow update = new itemWindow();
                         update.ProjectNameValue = projectName;
+                        update.UserValue = username;
                         update.ShowDialog();
 
                         this.Close();
@@ -671,8 +673,10 @@ namespace PMgo
                         conn.Close();
                         this.Close();
                         string projectName = this.projNameBox.Text;
+                        string username = this.current_txt.Text;
                         itemWindow update = new itemWindow();
                         update.ProjectNameValue = projectName;
+                        update.UserValue = username;
                         update.ShowDialog();
 
                         this.Close();
