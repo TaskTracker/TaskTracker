@@ -28,8 +28,8 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="278,240,0,0" VerticalAlignment="Top" Height="53" Width="119" FontSize="36" FontFamily="Segoe UI Light"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="238,326,0,0" VerticalAlignment="Top" Height="53" Width="159" FontSize="36" FontFamily="Segoe UI Light"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="227,227,0,0" VerticalAlignment="Top" Height="53" Width="170" FontSize="36" FontFamily="Segoe UI Light"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="238,309,0,0" VerticalAlignment="Top" Height="53" Width="159" FontSize="36" FontFamily="Segoe UI Light"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="476,424,0,0" VerticalAlignment="Top" Width="183" Height="87" FontSize="30" Click="Button_Click_1" FontFamily="Segoe UI Light" Cursor="Arrow">
             <Button.Effect>
                 <DropShadowEffect/>

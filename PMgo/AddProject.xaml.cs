@@ -27,6 +27,27 @@ namespace PMgo
             fill_projListBox();
         }
 
+        public string ProjectNameValue
+        {
+            get;
+            set;
+        }
+
+
+        string _theUser;
+
+        public string UserValue
+        {
+            get { return _theUser; }
+            set
+            {
+                _theUser = value;
+                this.current_txt.Text = _theUser;
+
+            }
+
+        }
+
         void fill_projListBox()
         {
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
@@ -103,7 +124,10 @@ namespace PMgo
                 createCommand2.ExecuteNonQuery();
 
                 string project_name = this.projNameField.Text;
+                string username = this.current_txt.Text;
                 MainView main = new MainView(project_name);
+                main.UserValue = username;
+                main.ProjectNameValue = project_name;
                 main.ShowDialog();
                 
                 this.Close();

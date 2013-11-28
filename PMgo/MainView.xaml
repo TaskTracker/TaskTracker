@@ -35,7 +35,7 @@
                     <DropShadowEffect Color="#FFF9F5F5"/>
                 </Label.Effect>
             </Label>
-            <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="21" Margin="122,27,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
+            <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="21" Margin="122,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="#FFFBF5F5"/>
                 </TextBlock.Effect>

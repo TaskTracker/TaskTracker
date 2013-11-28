@@ -12,7 +12,7 @@
         <DatePicker x:Name="startField" HorizontalAlignment="Left" Margin="5,189,0,0" VerticalAlignment="Top" Width="203" Height="41" Grid.Column="2" FontSize="18"/>
         <TextBox x:Name="descriptionField" HorizontalAlignment="Left" Height="122" Margin="5,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" Grid.Column="2" FontSize="18"/>
         <DatePicker x:Name="endField" HorizontalAlignment="Left" Margin="5,235,0,0" VerticalAlignment="Top" Width="203" Height="41" Grid.Column="2" FontSize="18"/>
-        <Label Content="Add A Project" HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="61" FontSize="36" Grid.Column="1" Margin="123,10,0,0" FontFamily="Segoe UI Light" Grid.ColumnSpan="2"/>
+        <Label Content="Add A Project" HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="61" FontSize="36" Grid.Column="2" Margin="10,28,0,0" FontFamily="Segoe UI Light"/>
         <ComboBox x:Name="pmBox" HorizontalAlignment="Left" Margin="5,141,0,0" VerticalAlignment="Top" Width="329" Height="41" Grid.Column="2" SelectionChanged="ComboBox_SelectionChanged_1" FontSize="18"/>
         <Label Content="Project Name" HorizontalAlignment="Left" Margin="1,95,0,0" VerticalAlignment="Top" Height="41" Width="138" FontSize="20" Grid.Column="1"/>
         <Label Content="Project Manager" HorizontalAlignment="Left" Margin="1,141,0,0" VerticalAlignment="Top" Height="41" Width="165" FontSize="20" Grid.Column="1" Grid.ColumnSpan="2"/>
@@ -20,10 +20,20 @@
         <Label Content="Estimated End" HorizontalAlignment="Left" Margin="1,235,0,0" VerticalAlignment="Top" Height="41" Width="138" FontSize="20" Grid.Column="1"/>
         <Label Content=" Description" HorizontalAlignment="Left" Margin="0,281,0,0" VerticalAlignment="Top" Height="41" Width="124" FontSize="20" Grid.Column="1"/>
         <Button Content="Add Project" Grid.Column="2" HorizontalAlignment="Left" Margin="10,419,0,0" VerticalAlignment="Top" Width="165" Height="51" FontSize="18" Click="Button_Click_1"/>
-        <Image HorizontalAlignment="Left" Height="90" Margin="1,0,0,0" VerticalAlignment="Top" Width="152" Source="egi-consulting-project-management.jpg" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="79" Margin="771,10,0,0" VerticalAlignment="Top" Width="132" Source="egi-consulting-project-management.jpg" Grid.Column="2"/>
         <ListBox x:Name="projListBox" Grid.Column="2" HorizontalAlignment="Left" Height="375" Margin="465,95,0,0" VerticalAlignment="Top" Width="328" Background="Black" Foreground="White" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18" FontFamily="Segoe UI Light"/>
         <Label Content="Current Projects" Grid.Column="2" HorizontalAlignment="Left" Margin="549,45,0,0" VerticalAlignment="Top" Width="176" Height="44" FontSize="20"/>
         <Button Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="198,421,0,0" VerticalAlignment="Top" Width="165" Height="51" />
+        <Label Content="Current User:" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C" Grid.ColumnSpan="2">
+            <Label.Effect>
+                <DropShadowEffect Color="#FFF9F5F5"/>
+            </Label.Effect>
+        </Label>
+        <TextBlock x:Name="current_txt" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="112,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="#FFFB0C0C">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="#FFFBF5F5"/>
+            </TextBlock.Effect>
+        </TextBlock>
 
     </Grid>
 </Window>

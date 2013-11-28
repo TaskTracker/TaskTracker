@@ -682,9 +682,29 @@ namespace PMgo
                         this.Close();
                     }
                 }
-                else
+                else if (this.typeBox.Text == "milestone")
                 {
-                    MessageBox.Show("test");
+                    MessageBoxResult result = MessageBox.Show("Are you sure you want to Delete this milestone?", "Delete Confirmation", MessageBoxButton.YesNo);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        conn.Open();
+                        string query = "delete from milestones where milestone_name = '" + this.nameBox.Text + "';";
+
+                        SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                        createCommand.ExecuteNonQuery();
+                        MessageBox.Show("Milestone has been deleted!");
+                        conn.Close();
+                        this.Close();
+                        string projectName = this.projNameBox.Text;
+                        string username = this.current_txt.Text;
+                        itemWindow update = new itemWindow();
+                        update.ProjectNameValue = projectName;
+                        update.UserValue = username;
+                        update.ShowDialog();
+
+                        this.Close();
+                    }
                 }
                 
                

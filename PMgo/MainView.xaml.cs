@@ -42,7 +42,7 @@ namespace PMgo
 		}
 
         
-    string _theUser;
+        string _theUser;
   
         public string UserValue
         {
@@ -50,7 +50,8 @@ namespace PMgo
             set 
             {
                 _theUser = value;
-               this.current_txt.Text = _theUser;
+                this.current_txt.Text = _theUser;
+
             }
 
         }

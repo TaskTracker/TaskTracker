@@ -93,7 +93,10 @@ namespace PMgo
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            String username = this.current_txt.Text;
+
             AddProject project = new AddProject();
+            project.UserValue = username;
             project.ShowDialog();
             this.Close();
         }
