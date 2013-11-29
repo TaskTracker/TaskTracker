@@ -29,6 +29,7 @@ namespace PMgo
             fillUserBox();
             this.ProjectNameValue = this.projNameBox.Text;
             PopulateTreeView();
+            fillDocBox();
 
 			//need to populate the treeview before expaninding it.
             expandTreeView(ItemTreeView);
@@ -63,6 +64,64 @@ namespace PMgo
                 this.current_txt.Text = _theUser;
              }
 
+         }
+
+         void fillDocBox()
+         {
+             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+             // open connection to database
+             try
+             {
+                 conn.Open();
+                 if (this.typeBox.Text == "task")
+                 {
+                     //MessageBox.Show(this.project_txt.Text);
+                     string Query = "select doc_name from documents where task_id = (select task_id from tasks where task_name = '" + this.nameBox.Text + "');";
+                     SQLiteCommand createcommand = new SQLiteCommand(Query, conn);                    
+                     SQLiteDataReader dr = createcommand.ExecuteReader();
+
+                     while (dr.Read())
+                     {
+                         string doc = dr.GetString(0);
+                         docBox.Items.Add(doc);
+                     }
+                     
+                 }
+                 else if (this.typeBox.Text == "milestone")
+                 {
+                     //MessageBox.Show(this.project_txt.Text);
+                     string Query = "select doc_name from documents where milestone_id = (select milestone_id from milestones where milestone_name = '" + this.nameBox.Text + "');";
+                     SQLiteCommand createcommand = new SQLiteCommand(Query, conn);
+                     SQLiteDataReader dr = createcommand.ExecuteReader();
+
+                     while (dr.Read())
+                     {
+                         string doc = dr.GetString(0);
+                         docBox.Items.Add(doc);
+                     }
+
+                 }
+                 if (this.typeBox.Text == "subtask")
+                 {
+                     //MessageBox.Show(this.project_txt.Text);
+                     string Query = "select doc_name from documents where subtask_id = (select subtask_id from subtasks where task_name = '" + this.nameBox.Text + "');";
+                     SQLiteCommand createcommand = new SQLiteCommand(Query, conn);                     
+                     SQLiteDataReader dr = createcommand.ExecuteReader();
+
+                     while (dr.Read())
+                     {
+                         string doc = dr.GetString(0);
+                         docBox.Items.Add(doc);
+                     }
+
+                 }
+                 
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(ex.Message);
+             }
          }
 
 
@@ -515,8 +574,8 @@ namespace PMgo
                 }              
                 
 
-                //userNameBox.Items.Clear();
-                //fill_userBox();
+                docBox.Items.Clear();
+                fillDocBox();
 
             }
             catch (Exception ex)
@@ -617,6 +676,25 @@ namespace PMgo
 					expandTreeView(ItemTreeView);
 				}
                 
+            }
+
+            else if (CreateComboBox.SelectedItem.ToString() == "System.Windows.Controls.ComboBoxItem: Document")
+            {
+                if (this.nameBox.Text == "")
+                {
+                    MessageBox.Show("You must first choose a task or a subtask!");
+                }               
+                else
+                {
+                    String type = this.typeBox.Text;
+                    String parent = this.nameBox.Text;
+                    createDoc doc = new createDoc();
+                    doc.TypeValue = type;
+                    doc.ParentValue = parent;
+                    doc.ShowDialog();
+                    
+                }
+
             }
             else
             {

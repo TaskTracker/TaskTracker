@@ -11,7 +11,6 @@
                 <GradientStop Color="#FF8AC0CF" Offset="0.973"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="157" Source="egi-consulting-project-management.jpg" RenderTransformOrigin="-0.226,0.407" Margin="986,27,0,0"/>
         <Button x:Name="submit_btn" Content="Save" HorizontalAlignment="Left" Height="34" Margin="13,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -36,15 +35,15 @@
         <TextBox x:Name="descriptionBox" HorizontalAlignment="Left" Height="87" Margin="148,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" FontSize="16" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
 
         </TextBox>
-        <DatePicker x:Name="endBox" HorizontalAlignment="Left" Margin="407,219,0,0" VerticalAlignment="Top" Height="43" Width="181" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-        <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="111,220,0,0" VerticalAlignment="Top" Height="42" Width="181" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+        <DatePicker x:Name="endBox" HorizontalAlignment="Left" Margin="109,256,0,0" VerticalAlignment="Top" Height="43" Width="181" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+        <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="109,206,0,0" VerticalAlignment="Top" Height="42" Width="181" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
         <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="10,334,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
         <ListBox x:Name="AssignedUsersBox" HorizontalAlignment="Left" Height="165" Margin="343,334,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
         <Button Content="Add -&gt;" HorizontalAlignment="Left" Margin="241,376,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
         <Label Content="Name" HorizontalAlignment="Left" Height="39" Margin="31,55,0,0" VerticalAlignment="Top" Width="61" FontSize="18"/>
         <Label Content="Description" HorizontalAlignment="Left" Height="39" Margin="24,104,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>
-        <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="18,223,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
-        <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="322,223,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
+        <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="16,209,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
+        <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="24,260,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
         <Button Content="&lt;-Remove" HorizontalAlignment="Left" Margin="241,430,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
         <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="669,130,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14">
             <TreeView.Effect>
@@ -97,13 +96,14 @@
         <Label Content="Assigned&#xA;" HorizontalAlignment="Left" Height="39" Margin="408,299,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
         <ComboBox x:Name="CreateComboBox" HorizontalAlignment="Left" Margin="669,509,0,0" VerticalAlignment="Top" Width="176" Height="34" Text="Create" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Create milestone, task or subtask" Tag="Create" SelectionChanged="ComboBox_SelectionChanged_1" Initialized="CreateComboBox_Initialized" >
             <ComboBoxItem Content="Project Item" IsEnabled="False"/>
+            <ComboBoxItem Content="Document"/>
             <ComboBoxItem Content="Milestone" ToolTip="Add Milestone to current project"/>
             <ComboBoxItem Content="Task" ToolTip="Add task to current milestone"/>
             <ComboBoxItem Content="Subtask" ToolTip="Add subtask to current task"/>
         </ComboBox>
         <Button x:Name="completeButton" Content="Complete!" HorizontalAlignment="Left" Height="35" Margin="369,56,0,0" VerticalAlignment="Top" Width="146" Click="Button_Click_2" FontSize="20" Background="#FF129312" FontFamily="Segoe Script"/>
         <Button x:Name="notCompleteButton" Content="Mark Complete" HorizontalAlignment="Left" Height="35" Margin="369,57,0,0" VerticalAlignment="Top" Width="146" Click="Button_Click_2" FontSize="18" Background="#FFE21D13"/>
-        <TextBlock x:Name="typeBox" HorizontalAlignment="Left" Height="39" Margin="520,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Visibility="Hidden"/>
+        <TextBlock x:Name="typeBox" HorizontalAlignment="Left" Height="39" Margin="421,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Visibility="Visible"/>
         <Label Content="Current User:" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
             <Label.Effect>
                 <DropShadowEffect Color="#FFF9F5F5"/>
@@ -114,6 +114,9 @@
                 <DropShadowEffect Color="#FFFBF5F5"/>
             </TextBlock.Effect>
         </TextBlock>
+        <GridSplitter HorizontalAlignment="Left" Height="591" Margin="614,0,0,0" VerticalAlignment="Top" Width="26"/>
+        <ComboBox x:Name="docBox" HorizontalAlignment="Left" Height="49" Margin="329,245,0,0" VerticalAlignment="Top" Width="262"/>
+        <Label Content="Documents&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Height="39" Margin="408,209,0,0" VerticalAlignment="Top" Width="122" FontSize="18"/>
 
     </Grid>
 </Window>
