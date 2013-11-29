@@ -105,7 +105,7 @@ namespace PMgo
                  if (this.typeBox.Text == "subtask")
                  {
                      //MessageBox.Show(this.project_txt.Text);
-                     string Query = "select doc_name from documents where subtask_id = (select subtask_id from subtasks where task_name = '" + this.nameBox.Text + "');";
+                     string Query = "select doc_name from documents where subtask_id = (select subtask_id from subtasks where subtask_name = '" + this.nameBox.Text + "');";
                      SQLiteCommand createcommand = new SQLiteCommand(Query, conn);                     
                      SQLiteDataReader dr = createcommand.ExecuteReader();
 
@@ -791,6 +791,43 @@ namespace PMgo
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void docBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            String name = this.docBox.SelectedItem.ToString();
+            SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
+
+            // open connection to database
+            try
+            {
+                sqliteCon.Open();
+
+                //MessageBox.Show(this.project_txt.Text);
+                string Query = "select * from documents where doc_name = '" + name + "';";
+                SQLiteCommand createcommand = new SQLiteCommand(Query, sqliteCon);
+                SQLiteDataReader dr = createcommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string dName = dr.GetString(1);
+                    string dDesc = dr.GetString(2);
+                    string dLocation = dr.GetString(3);
+
+                    viewDoc viewDocument = new viewDoc();
+                    viewDocument.NameValue = dName;
+                    viewDocument.DescValue = dDesc;
+                    viewDocument.LocationValue = dLocation;
+                    viewDocument.ShowDialog();
+                    
+
+                }
+                sqliteCon.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         
