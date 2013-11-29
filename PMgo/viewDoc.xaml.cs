@@ -72,30 +72,17 @@ namespace PMgo
         void populateDoc()
         {
             string filename = this.locationBox.Text;
-            System.Windows.MessageBox.Show(filename);
-            
+                   
             String text = File.ReadAllText(filename);
             this.docText.Text = text;
-           
+            docText.ScrollToEnd();          
             
-            //Stream mystream;
+           
+        }
 
-            //String locationValue = this.locationBox.Text;          
-           // OpenFileDialog ofd = new OpenFileDialog();
-
-           // ofd.FileName = this.locationBox.Text;
-
-            //docText.Text = File.ReadAllText(ofd.FileName);
-            /*if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                if ((mystream = ofd.OpenFile()) != null)
-                {
-                    String filename = ofd.FileName;
-                    this.locationBox.Text = filename;
-                    String text = File.ReadAllText(this.locationBox.Text);
-                    this.docText.Text = text;
-                }
-            }*/
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         

@@ -115,7 +115,7 @@
             </TextBlock.Effect>
         </TextBlock>
         <GridSplitter HorizontalAlignment="Left" Height="591" Margin="614,0,0,0" VerticalAlignment="Top" Width="26"/>
-        <ComboBox x:Name="docBox" HorizontalAlignment="Left" Height="49" Margin="329,245,0,0" VerticalAlignment="Top" Width="262" SelectionChanged="docBox_SelectionChanged"/>
+        <ComboBox x:Name="docBox" HorizontalAlignment="Left" Height="49" Margin="329,245,0,0" VerticalAlignment="Top" Width="262" SelectionChanged="docBox_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
         <Label Content="Documents&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Height="39" Margin="408,209,0,0" VerticalAlignment="Top" Width="122" FontSize="18"/>
 
     </Grid>
