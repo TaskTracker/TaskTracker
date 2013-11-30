@@ -37,7 +37,7 @@
         </TextBox>
         <DatePicker x:Name="endBox" HorizontalAlignment="Left" Margin="183,248,0,0" VerticalAlignment="Top" Height="43" Width="145" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
         <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="25,249,0,0" VerticalAlignment="Top" Height="42" Width="151" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-        <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="23,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
+        <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="23,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light" SelectionChanged="availableUsersBox_SelectionChanged"/>
         <ListBox x:Name="AssignedUsersBox" HorizontalAlignment="Left" Height="165" Margin="356,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
         <Button Content="Add -&gt;" HorizontalAlignment="Left" Margin="254,403,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
         <Label Content="Description" HorizontalAlignment="Left" Height="39" Margin="19,127,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>

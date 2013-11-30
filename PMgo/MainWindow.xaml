@@ -19,38 +19,36 @@
             <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="projectField" HorizontalAlignment="Left" Height="199" Margin="48,213,0,0" VerticalAlignment="Top" Width="440" SelectionChanged="projectField_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Foreground="#FF0C0000" FontSize="22" Grid.Column="2" Grid.ColumnSpan="2" FontFamily="Segoe UI Light" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
+        <ListBox x:Name="projectField" HorizontalAlignment="Left" Height="199" Margin="11,213,0,0" VerticalAlignment="Top" Width="323" SelectionChanged="projectField_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Foreground="#FF0C0000" FontSize="18" Grid.Column="2" Grid.ColumnSpan="2" OpacityMask="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
             <ListBox.Effect>
                 <DropShadowEffect/>
             </ListBox.Effect>
         </ListBox>
-        <Label Content="Choose a Project" Grid.Column="3" HorizontalAlignment="Left" Margin="116,57,0,0" VerticalAlignment="Top" Width="387" Height="81" FontSize="48" FontFamily="Segoe UI Light">
-            <Label.Effect>
-                <DropShadowEffect Color="#FFF7F1F1"/>
-            </Label.Effect>
-        </Label>
         <Button Content="Add a New Project" Grid.Column="3" HorizontalAlignment="Left" Height="55" Margin="149,455,0,0" VerticalAlignment="Top" Width="327" Click="Button_Click_3" FontSize="36" FontFamily="Segoe UI Light">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <ListBox Grid.Column="3" HorizontalAlignment="Left" Height="199" Margin="332,213,0,0" VerticalAlignment="Top" Width="461" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="22">
+        <ListBox x:Name="user_projectField" Grid.Column="3" HorizontalAlignment="Left" Height="199" Margin="136,213,0,0" VerticalAlignment="Top" Width="347" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="18" SelectionChanged="ListBox_SelectionChanged_1">
             <ListBox.Effect>
                 <DropShadowEffect/>
             </ListBox.Effect>
         </ListBox>
-        <Label Content="Project You are Managing" Grid.Column="2" HorizontalAlignment="Left" Margin="48,171,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="306" FontSize="24"/>
-        <Label Content="Project You are a Team Member" Grid.Column="3" HorizontalAlignment="Left" Margin="332,171,0,0" VerticalAlignment="Top" Width="357" FontSize="24"/>
-        <Label Content="Current User:" Grid.Column="1" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Light" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="#FFFB0C0C">
-            <Label.Effect>
-                <DropShadowEffect Color="#FFF9F5F5"/>
-            </Label.Effect>
-        </Label>
-        <TextBlock x:Name="current_txt" Grid.Column="2" HorizontalAlignment="Left" Height="21" Margin="77,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="#FFFB0C0C">
+        <Label Content="Projects You are Managing" Grid.Column="2" HorizontalAlignment="Left" Margin="28,171,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="306" FontSize="22"/>
+        <Label Content="Projects You are a Team Member" Grid.Column="3" HorizontalAlignment="Left" Margin="145,173,0,0" VerticalAlignment="Top" Width="357" FontSize="22"/>
+        <TextBlock x:Name="current_txt" Grid.Column="3" HorizontalAlignment="Left" Height="55" Margin="212,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="289" FontSize="36" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FF1145B4">
             <TextBlock.Effect>
                 <DropShadowEffect Color="#FFFBF5F5"/>
             </TextBlock.Effect>
         </TextBlock>
+        <Label Content="Please Choose a Project" Grid.Column="3" HorizontalAlignment="Left" Height="89" Margin="22,82,0,0" VerticalAlignment="Top" Width="535" FontSize="48"/>
+        <ListBox x:Name="allProjectsField" Grid.Column="3" HorizontalAlignment="Left" Height="199" Margin="497,213,0,0" VerticalAlignment="Top" Width="323" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="18">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+        </ListBox>
+        <Label Content="All Projects" Grid.Column="3" HorizontalAlignment="Left" Margin="586,173,0,0" VerticalAlignment="Top" Width="140" FontSize="22"/>
+        <Label Content="Welcome, " Grid.Column="3" HorizontalAlignment="Left" Height="58" Margin="42,37,0,0" VerticalAlignment="Top" Width="164" FontSize="36"/>
 
     </Grid>
 </Window>

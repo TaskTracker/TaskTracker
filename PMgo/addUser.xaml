@@ -1,9 +1,9 @@
 ﻿<Window x:Class="PMgo.addUser"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Add a User" Height="580" Width="1150" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <TextBox x:Name="userNameField" HorizontalAlignment="Left" Height="41" Margin="232,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" KeyboardNavigation.TabIndex="0">
+        Title="Add a User" Height="580" Width="1150" WindowStartupLocation="CenterScreen" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+    <Grid RenderTransformOrigin="0.547,0.51">
+        <TextBox x:Name="userNameField" HorizontalAlignment="Left" Height="41" Margin="166,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="18" KeyboardNavigation.TabIndex="0">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -14,48 +14,57 @@
         <Label Content="email" HorizontalAlignment="Left" Margin="10,234,0,0" VerticalAlignment="Top" Height="41" Width="103" FontSize="20"/>
         <Label Content="Phone Number" HorizontalAlignment="Left" Margin="9,282,0,0" VerticalAlignment="Top" Height="41" Width="165" FontSize="20"/>
         <Label Content="Temp Password" HorizontalAlignment="Left" Margin="8,328,0,0" VerticalAlignment="Top" Height="41" Width="166" FontSize="20"/>
-        <Button x:Name="addUserControl" Content="Add User" HorizontalAlignment="Left" Margin="596,378,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_1" />
+        <Button x:Name="addUserControl" Content="Add User" HorizontalAlignment="Left" Margin="467,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_1" />
         <Image HorizontalAlignment="Left" Height="90" Margin="10,13,0,0" VerticalAlignment="Top" Width="152" Source="egi-consulting-project-management.jpg"/>
         <Label Content="Office Location" HorizontalAlignment="Left" Margin="8,374,0,0" VerticalAlignment="Top" Height="41" Width="166" FontSize="20"/>
-        <TextBox x:Name="emailField" HorizontalAlignment="Left" Height="41" Margin="232,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" KeyboardNavigation.TabIndex="2">
+        <TextBox x:Name="emailField" HorizontalAlignment="Left" Height="41" Margin="166,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="18" KeyboardNavigation.TabIndex="2">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="phoneField" HorizontalAlignment="Left" Height="41" Margin="232,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" KeyboardNavigation.TabIndex="3">
+        <TextBox x:Name="phoneField" HorizontalAlignment="Left" Height="41" Margin="166,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="18" KeyboardNavigation.TabIndex="3">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="passwordField" HorizontalAlignment="Left" Height="41" Margin="232,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" KeyboardNavigation.TabIndex="4">
+        <TextBox x:Name="passwordField" HorizontalAlignment="Left" Height="41" Margin="166,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="18" KeyboardNavigation.TabIndex="4">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <TextBox x:Name="officeField" HorizontalAlignment="Left" Height="41" Margin="232,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" KeyboardNavigation.TabIndex="5">
+        <TextBox x:Name="officeField" HorizontalAlignment="Left" Height="41" Margin="166,374,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="18" KeyboardNavigation.TabIndex="5">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <ListBox x:Name="userNameBox" HorizontalAlignment="Left" Height="352" Margin="772,103,0,0" VerticalAlignment="Top" Width="290" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18" FontFamily="Segoe UI Light" Background="Black" Foreground="White">
+        <ListBox x:Name="userNameBox" HorizontalAlignment="Left" Height="312" Margin="477,123,0,0" VerticalAlignment="Top" Width="254" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18" FontFamily="Segoe UI Light" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Foreground="White">
             <ListBox.Effect>
                 <DropShadowEffect/>
             </ListBox.Effect>
         </ListBox>
-        <Label Content="User Accounts" HorizontalAlignment="Left" Margin="825,61,0,0" VerticalAlignment="Top" Width="171" Height="42" FontSize="20"/>
-        <TextBox x:Name="titleField" HorizontalAlignment="Left" Height="41" Margin="232,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" KeyboardNavigation.TabIndex="1">
+        <Label Content="User Accounts" HorizontalAlignment="Left" Margin="535,88,0,0" VerticalAlignment="Top" Width="141" Height="42" FontSize="20"/>
+        <TextBox x:Name="titleField" HorizontalAlignment="Left" Height="41" Margin="166,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="18" KeyboardNavigation.TabIndex="1">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="deleteUserControl" Content="Delete User" HorizontalAlignment="Left" Margin="596,215,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_2"/>
-        <Button x:Name="modifyUserControl" Content="Modify User" HorizontalAlignment="Left" Margin="596,298,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_3"/>
+        <Button x:Name="deleteUserControl" Content="Delete User" HorizontalAlignment="Left" Margin="167,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_2"/>
+        <Button x:Name="modifyUserControl" Content="Modify User" HorizontalAlignment="Left" Margin="317,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_3"/>
         <TextBox x:Name="userIdField" HorizontalAlignment="Left" Height="41" Margin="232,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" Visibility="Hidden">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button Content="New User" HorizontalAlignment="Left" Margin="596,128,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_4"/>
+        <Button Content="New User" HorizontalAlignment="Left" Margin="17,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_4"/>
+        <ListBox x:Name="assignedUsersBlock" HorizontalAlignment="Left" Height="312" Margin="839,123,0,0" VerticalAlignment="Top" Width="254" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+        </ListBox>
+        <Button Content="Assign ---&gt;" HorizontalAlignment="Left" Height="48" Margin="741,201,0,0" VerticalAlignment="Top" Width="88" FontSize="14" Background="#FF64B970"/>
+        <Button Content="&lt;--Remove" HorizontalAlignment="Left" Height="48" Margin="741,282,0,0" VerticalAlignment="Top" Width="88" FontSize="14" Click="Button_Click_5" Background="#FF64B970"/>
+        <Label Content="Assigned Users&#xD;&#xA;" HorizontalAlignment="Left" Margin="896,88,0,0" VerticalAlignment="Top" Width="148" Height="42" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="58" Margin="535,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480"/>
 
     </Grid>
 </Window>

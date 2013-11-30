@@ -1,52 +1,20 @@
 ﻿<Window x:Class="PMgo.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainView" Height="580" Width="1150" WindowStartupLocation="CenterScreen" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title="MainView" Height="602.963" Width="1140.331" WindowStartupLocation="CenterScreen" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Grid>
-        <Button Content="Manage Team Members" Margin="878,110,0,0" Width="172" Click="Button_Click_2" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"/>
-        <Button Content="Add Menu" Margin="878,162,0,0" Width="172" Click="Button_Click_4" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0"/>
-        <Grid Margin="0,-24,0,-15" HorizontalAlignment="Left" Width="1142">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFBFDBE4" Offset="0"/>
-                    <GradientStop Color="#FF329BB8" Offset="1"/>
-                    <GradientStop Color="#FFEAE5EE" Offset="0.521"/>
-                    <GradientStop Color="#FF8AC0CF" Offset="0.973"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <ProgressBar x:Name="projectProgress" TextBlock.FontWeight="Bold" Tag="Blah" HorizontalAlignment="Left" Height="59" Margin="190,146,0,0" VerticalAlignment="Top" Width="541" ValueChanged="projectProgress_ValueChanged">
-                <ProgressBar.BindingGroup>
-                    <BindingGroup Name="Blah">
-                    </BindingGroup>
-                </ProgressBar.BindingGroup>
-              <ProgressBar.Effect>
-                    <DropShadowEffect/>
-                </ProgressBar.Effect>
-            </ProgressBar>
-            <TextBlock x:Name="progressBar_txt" HorizontalAlignment="Left" Margin="352,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.475" Height="47" FontSize="22" FontWeight="Bold" Width="207" Panel.ZIndex="1" TextAlignment="Center" FontFamily="Segoe UI Light"/>
-            <Button Content="Button" HorizontalAlignment="Left" Margin="886,347,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click_1" Height="41" FontSize="30"/>
-            <TextBlock x:Name="projectNameField" HorizontalAlignment="Left" Height="52" Margin="236,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" FontSize="40" TextAlignment="Center">
-                <TextBlock.Effect>
-                    <DropShadowEffect Color="#FFF9F7F7"/>
-                </TextBlock.Effect>
-            </TextBlock>
-            <Label Content="Current User:" HorizontalAlignment="Left" Margin="18,22,0,0" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
-                <Label.Effect>
-                    <DropShadowEffect Color="#FFF9F5F5"/>
-                </Label.Effect>
-            </Label>
-            <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="21" Margin="122,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
-                <TextBlock.Effect>
-                    <DropShadowEffect Color="#FFFBF5F5"/>
-                </TextBlock.Effect>
-            </TextBlock>
-        </Grid>
+        <Button Content="Manage Members" Margin="806,224,0,0" Width="172" Click="Button_Click_2" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" FontSize="18"/>
+        <Button Content="Manage Items" Margin="806,272,0,0" Width="172" Click="Button_Click_4" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" FontSize="18"/>
         <TreeView x:Name="ProjectTreeView" HorizontalAlignment="Left" Height="290" Margin="190,222,0,0" VerticalAlignment="Top" Width="541" FontSize="14">
             <TreeView.Effect>
                 <DropShadowEffect/>
             </TreeView.Effect>
         </TreeView>
-        <Button x:Name="Refresh" Content="Refresh" Margin="878,212,0,0" Width="172" Click="Refresh_Click" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" FontSize="30"/>
+        <Button x:Name="Refresh" Content="Refresh" Margin="806,320,0,0" Width="172" Click="Refresh_Click" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" FontSize="18"/>
+        <TextBlock x:Name="projectNameField" HorizontalAlignment="Left" Margin="225,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="59" Width="474" FontSize="36" TextAlignment="Center"/>
+        <ProgressBar x:Name="projectProgress" HorizontalAlignment="Left" Height="62" Margin="190,127,0,0" VerticalAlignment="Top" Width="541"/>
+        <TextBlock x:Name="progressBar_txt" HorizontalAlignment="Left" Height="62" Margin="408,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" TextAlignment="Center" FontSize="18" FontFamily="Segoe UI Light"/>
+        <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="54" Margin="193,4,0,0" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Width="538" FontSize="24"/>
 
     </Grid>
 </Window>

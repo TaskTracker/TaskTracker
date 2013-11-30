@@ -25,7 +25,7 @@ namespace PMgo
         public MainWindow()
         {
             InitializeComponent();
-            //fill_projectField();
+            fill_allProjects();
         }
         string _theValue;
         public string UserValue
@@ -36,7 +36,33 @@ namespace PMgo
                 _theValue = value;
                 this.current_txt.Text = _theValue;
                 fill_projectField();
+                fill_users_projectField();
 
+            }
+        }
+
+        void fill_allProjects()
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            try
+            {
+                conn.Open();
+                string query = "select project_name from projects;";
+                //MessageBox.Show(query);
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                //createCommand.ExecuteNonQuery();
+                SQLiteDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string proj_name = dr.GetString(0);
+                    allProjectsField.Items.Add(proj_name);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -46,8 +72,8 @@ namespace PMgo
             try
             {
                 conn.Open();
-                string query = "select project_name from projects where proj_mgr = (select id from users where user_name = '" + this.current_txt.Text + "');";
-                MessageBox.Show(query);
+                string query = "select project_name from projects where proj_mgr = (select id from users where user_name = '" + UserValue + "');";
+                //MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();
@@ -55,6 +81,31 @@ namespace PMgo
                 {
                     string proj_name = dr.GetString(0);
                     projectField.Items.Add(proj_name);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        void fill_users_projectField()
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            try
+            {
+                conn.Open();
+                string query = "select project_name from projects join projects_users on (projects_users.proj_id = projects.project_id) where projects.project_id = projects_users.proj_id and projects_users.user_id = (select id from users where user_name = '" + UserValue + "');";
+                //MessageBox.Show(query);
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                //createCommand.ExecuteNonQuery();
+                SQLiteDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string proj_name = dr.GetString(0);
+                    user_projectField.Items.Add(proj_name);
                 }
 
 
@@ -99,6 +150,11 @@ namespace PMgo
             project.UserValue = username;
             project.ShowDialog();
             this.Close();
+        }
+
+        private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

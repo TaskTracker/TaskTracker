@@ -870,6 +870,11 @@ namespace PMgo
             
         }
 
+        private void availableUsersBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
         
 
                 
