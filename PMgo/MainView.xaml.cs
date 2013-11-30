@@ -115,7 +115,11 @@ namespace PMgo
 
 		private void Button_Click_2(object sender, RoutedEventArgs e)
 		{
-			addUser user = new addUser();
+            String projectName = this.projectNameField.Text;
+            String userName = this.current_txt.Text;
+            addUser user = new addUser();
+            user.ProjectNameValue = projectName;
+            user.UserValue = userName;
 			user.ShowDialog();
 			this.Close();
 		}
@@ -429,10 +433,12 @@ namespace PMgo
 		private void Button_Click_4(object sender, RoutedEventArgs e)
 		{
 			String project_name = this.projectNameField.Text;
+            String user_name = this.current_txt.Text;
 			//MessageBox.Show(project_name);
-			addMenu menu = new addMenu();
-			menu.ProjectNameValue = project_name;
-			menu.ShowDialog();
+            itemWindow items = new itemWindow();
+			items.ProjectNameValue = project_name;
+            items.UserValue = user_name;
+			items.ShowDialog();
 			
 		}
 

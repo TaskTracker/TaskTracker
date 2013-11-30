@@ -25,10 +25,40 @@ namespace PMgo
         {
             InitializeComponent();
             HideAddUserButton();
-            userNameBox.Items.Refresh();
+            //userNameBox.Items.Refresh();
             //userNameBox.Items.Clear();
             //clearUserItems();
-            fill_userBox();
+            //fill_userNameBox();
+            
+           
+        }
+
+        string _theValue;
+
+        public string ProjectNameValue
+        {
+            get { return _theValue; }
+            set
+            {
+                _theValue = value;
+                this.projectNameBox.Text = _theValue;                
+                fill_assignedUsersBox();
+                fill_userNameBox();
+            }
+
+        }
+
+        string _theUser;
+
+        public string UserValue
+        {
+            get { return _theUser; }
+            set
+            {
+                _theUser = value;
+                this.current_txt.Text = _theUser;
+            }
+
         }
 
         private void HideButtons()
@@ -67,7 +97,7 @@ namespace PMgo
             officeField.Text = String.Empty;
             
         }
-        void fill_userBox()
+        void fill_userNameBox()
         {
             
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
@@ -84,7 +114,7 @@ namespace PMgo
                     string username = dr.GetString(0);
                     userNameBox.Items.Add(username);
                 }
-
+                
 
             }
             catch (Exception ex)
@@ -96,6 +126,36 @@ namespace PMgo
                 conn.Close();
             }
             
+        }
+
+        void fill_assignedUsersBox()
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            try
+            {
+                assignedUsersBox.Items.Clear();
+                conn.Open();
+                string query = "select user_name from users join projects_users on (projects_users.user_id = users.id) where users.id = projects_users.user_id and projects_users.proj_id = (select project_id from projects where project_name = '" + ProjectNameValue + "');";
+                //MessageBox.Show(query);
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                //createCommand.ExecuteNonQuery();
+                SQLiteDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string assignedUser = dr.GetString(0);
+                    assignedUsersBox.Items.Add(assignedUser);
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -158,7 +218,7 @@ namespace PMgo
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 createCommand.ExecuteNonQuery();                
                 MessageBox.Show("User Was Added!");                
-                fill_userBox();
+                fill_userNameBox();
                 HideAddUserButton();
                 ShowButtons();
                 //clearUserItems();
@@ -186,7 +246,7 @@ namespace PMgo
                 //userNameBox.UnselectAll();
                 //MessageBox.Show("User Was Deleted!");
                 //userNameBox.Items.Refresh();
-                fill_userBox();
+                fill_userNameBox();
                 clearUserItems();
                 conn.Close();                
 
@@ -221,7 +281,7 @@ namespace PMgo
                 userNameBox.Items.Refresh();
                 MessageBox.Show("User Was Modified!");
                 conn.Close();
-                fill_userBox();
+                fill_userNameBox();
 
 
             }
@@ -242,6 +302,30 @@ namespace PMgo
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                conn.Open();
+                string query = "insert into projects_users (proj_id, user_id) select project_id, id from projects, users where projects.project_name = '"
+                                + ProjectNameValue + "'and users.user_name = '" + userNameBox.SelectedItem + "';";
+                //MessageBox.Show(query);
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                createCommand.ExecuteNonQuery();
+                MessageBox.Show("User was Assigned!");
+                //userNameBox.Items.Clear();
+                fill_assignedUsersBox();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("User is already assigned!");
+            }
         }
     }
 }
