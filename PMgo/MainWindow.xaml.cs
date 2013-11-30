@@ -154,7 +154,22 @@ namespace PMgo
 
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            
+            String project_name = this.user_projectField.SelectedItem.ToString();
+            String user = this.current_txt.Text;
+
+            MainView mainView = new MainView(project_name);
+            mainView.UserValue = user;
+            mainView.ShowDialog();
+        }
+
+        private void allProjectsField_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            String project_name = this.allProjectsField.SelectedItem.ToString();
+            String user = this.current_txt.Text;
+
+            MainView mainView = new MainView(project_name);
+            mainView.UserValue = user;
+            mainView.ShowDialog();
         }
     }
 }

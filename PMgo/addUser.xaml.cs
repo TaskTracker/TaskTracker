@@ -24,12 +24,7 @@ namespace PMgo
         public addUser()
         {
             InitializeComponent();
-            HideAddUserButton();
-            //userNameBox.Items.Refresh();
-            //userNameBox.Items.Clear();
-            //clearUserItems();
-            //fill_userNameBox();
-            
+            HideAddUserButton();    
            
         }
 
@@ -301,7 +296,26 @@ namespace PMgo
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
 
+            try
+            {
+                conn.Open();
+                string query = "delete from projects_users where (user_id in (select id from users where user_name ='"
+                                + this.assignedUsersBox.SelectedItem + "') and proj_id in (select project_id from projects where project_name = '"
+                                + this.ProjectNameValue + "'));";
+                //MessageBox.Show(query);
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                createCommand.ExecuteNonQuery();
+                MessageBox.Show("User was Removed!");                
+                fill_assignedUsersBox();
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)

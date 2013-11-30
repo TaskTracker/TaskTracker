@@ -42,7 +42,7 @@
             </TextBlock.Effect>
         </TextBlock>
         <Label Content="Please Choose a Project" Grid.Column="3" HorizontalAlignment="Left" Height="89" Margin="22,82,0,0" VerticalAlignment="Top" Width="535" FontSize="48"/>
-        <ListBox x:Name="allProjectsField" Grid.Column="3" HorizontalAlignment="Left" Height="199" Margin="497,213,0,0" VerticalAlignment="Top" Width="323" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="18">
+        <ListBox x:Name="allProjectsField" Grid.Column="3" HorizontalAlignment="Left" Height="199" Margin="497,213,0,0" VerticalAlignment="Top" Width="323" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="18" SelectionChanged="allProjectsField_SelectionChanged">
             <ListBox.Effect>
                 <DropShadowEffect/>
             </ListBox.Effect>
