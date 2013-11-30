@@ -30,6 +30,7 @@ namespace PMgo
             this.ProjectNameValue = this.projNameBox.Text;
             PopulateTreeView();
             fillDocBox();
+            //fillProjectManagerBox();
 
 			//need to populate the treeview before expaninding it.
             expandTreeView(ItemTreeView);
@@ -47,6 +48,7 @@ namespace PMgo
                 _theValue = value;
                 this.projNameBox.Text = _theValue;
                 PopulateTreeView();
+                fillProjectManagerBox();
                 expandTreeView(ItemTreeView);
             }
             
@@ -415,6 +417,29 @@ namespace PMgo
 
         }
 
+        void fillProjectManagerBox()
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                conn.Open();
+                string query = "select user_name from users join projects on (projects.proj_mgr = users.id) where project_name = '" + this.projNameBox.Text + "';";
+                MessageBox.Show(query);
+                SQLiteCommand createcommand = new SQLiteCommand(query, conn);
+                SQLiteDataReader dr = createcommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    this.projectManagerBox.Text = dr.GetString(0);                    
+                }
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         void fillUserBox()
         {
              SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
@@ -570,6 +595,21 @@ namespace PMgo
                     startBox.Text = start;
                     endBox.Text = end;
                     typeBox.Text = table;
+
+                    if (typeBox.Text == "milestone")
+                    {
+                        TypeFieldBox.Text = "Milestone";
+                    }
+
+                    else if (typeBox.Text == "task")
+                    {
+                        TypeFieldBox.Text = "Task";
+                    }
+
+                    else if (typeBox.Text == "subtask")
+                    {
+                        TypeFieldBox.Text = "Subtask";
+                    }
                     statusButtons();
                 }              
                 

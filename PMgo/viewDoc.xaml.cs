@@ -75,7 +75,7 @@ namespace PMgo
                    
             String text = File.ReadAllText(filename);
             this.docText.Text = text;
-            docText.ScrollToEnd();          
+                     
             
            
         }
@@ -84,6 +84,16 @@ namespace PMgo
         {
             this.Close();
         }
+
+       
+
+        private void docTextScroll_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            docText.ScrollToHome();
+        }
+
+       
+       
 
         
     }

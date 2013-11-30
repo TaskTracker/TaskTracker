@@ -7,11 +7,17 @@
             <ColumnDefinition Width="12*"/>
             <ColumnDefinition Width="107*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="docDesc" HorizontalAlignment="Left" Height="58" Margin="38,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" Grid.Column="1" FontFamily="Segoe UI Semibold"/>
-        <TextBox x:Name="docText" HorizontalAlignment="Left" Height="400" Margin="38,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBlock x:Name="docDesc" HorizontalAlignment="Left" Height="58" Margin="96,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" Grid.Column="1" FontFamily="Segoe UI Semibold"/>
+        <TextBox x:Name="docText" HorizontalAlignment="Left" Height="418" Margin="27,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="428" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
         <TextBox x:Name="locationBox" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="336,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Visibility="Hidden"/>
-        <TextBlock x:Name="docName" Grid.Column="1" HorizontalAlignment="Left" Height="36" Margin="38,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontSize="22"/>
+        <TextBlock x:Name="docName" Grid.Column="1" HorizontalAlignment="Left" Height="36" Margin="96,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontSize="22" TextAlignment="Center"/>
         <Button Content="Close" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="129,547,0,0" VerticalAlignment="Top" Width="244" FontSize="20" Click="Button_Click_1"/>
+        <ScrollBar x:Name="docTextScroll" Grid.Column="1" HorizontalAlignment="Left" Margin="438,107,0,0" VerticalAlignment="Top" Height="418" ValueChanged="docTextScroll_ValueChanged" />
+
 
     </Grid>
 </Window>

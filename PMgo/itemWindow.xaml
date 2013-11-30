@@ -11,7 +11,7 @@
                 <GradientStop Color="#FF8AC0CF" Offset="0.973"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="submit_btn" Content="Save" HorizontalAlignment="Left" Height="34" Margin="13,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
+        <Button x:Name="submit_btn" Content="Save" HorizontalAlignment="Left" Height="34" Margin="26,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0"/>
@@ -20,7 +20,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="cancel_btn" Content="Cancel" HorizontalAlignment="Left" Height="34" Margin="150,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="cancel_btn_Click">
+        <Button x:Name="cancel_btn" Content="Cancel" HorizontalAlignment="Left" Height="34" Margin="163,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="cancel_btn_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -29,29 +29,28 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBox x:Name="nameBox" HorizontalAlignment="Left" Height="39" Margin="148,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" FontSize="20" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+        <TextBox x:Name="nameBox" HorizontalAlignment="Left" Height="39" Margin="23,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" FontSize="20" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Foreground="Black">
 
         </TextBox>
-        <TextBox x:Name="descriptionBox" HorizontalAlignment="Left" Height="87" Margin="148,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="367" FontSize="16" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+        <TextBox x:Name="descriptionBox" HorizontalAlignment="Left" Height="62" Margin="23,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" FontSize="16" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
 
         </TextBox>
-        <DatePicker x:Name="endBox" HorizontalAlignment="Left" Margin="109,256,0,0" VerticalAlignment="Top" Height="43" Width="181" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-        <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="109,206,0,0" VerticalAlignment="Top" Height="42" Width="181" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-        <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="10,334,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
-        <ListBox x:Name="AssignedUsersBox" HorizontalAlignment="Left" Height="165" Margin="343,334,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
-        <Button Content="Add -&gt;" HorizontalAlignment="Left" Margin="241,376,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
-        <Label Content="Name" HorizontalAlignment="Left" Height="39" Margin="31,55,0,0" VerticalAlignment="Top" Width="61" FontSize="18"/>
-        <Label Content="Description" HorizontalAlignment="Left" Height="39" Margin="24,104,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>
-        <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="16,209,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
-        <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="24,260,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
-        <Button Content="&lt;-Remove" HorizontalAlignment="Left" Margin="241,430,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
-        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="669,130,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14">
+        <DatePicker x:Name="endBox" HorizontalAlignment="Left" Margin="183,248,0,0" VerticalAlignment="Top" Height="43" Width="145" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+        <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="25,249,0,0" VerticalAlignment="Top" Height="42" Width="151" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
+        <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="23,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
+        <ListBox x:Name="AssignedUsersBox" HorizontalAlignment="Left" Height="165" Margin="356,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
+        <Button Content="Add -&gt;" HorizontalAlignment="Left" Margin="254,403,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
+        <Label Content="Description" HorizontalAlignment="Left" Height="39" Margin="19,127,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>
+        <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="23,222,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
+        <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="201,221,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
+        <Button Content="&lt;-Remove" HorizontalAlignment="Left" Margin="254,457,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
+        <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="707,157,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14">
             <TreeView.Effect>
                 <DropShadowEffect/>
             </TreeView.Effect>
         </TreeView>
 
-        <Button Content="Edit" HorizontalAlignment="Left" Height="34" Margin="13,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
+        <Button Content="Edit" HorizontalAlignment="Left" Height="34" Margin="26,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0"/>
@@ -60,7 +59,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="submit_btn_Copy1" Content="Create" HorizontalAlignment="Left" Height="34" Margin="851,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="submit_btn_Copy1_Click" >
+        <Button x:Name="submit_btn_Copy1" Content="Create" HorizontalAlignment="Left" Height="34" Margin="946,536,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="submit_btn_Copy1_Click" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0"/>
@@ -69,7 +68,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Height="34" Margin="287,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="deleteButton_Click" >
+        <Button x:Name="deleteButton" Content="Delete" HorizontalAlignment="Left" Height="34" Margin="300,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="deleteButton_Click" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -78,7 +77,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="cancel_btn_Copy1" Content="Clear" HorizontalAlignment="Left" Height="34" Margin="424,509,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="cancel_btn_Click">
+        <Button x:Name="cancel_btn_Copy1" Content="Clear" HorizontalAlignment="Left" Height="34" Margin="437,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="cancel_btn_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -87,36 +86,38 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="projNameBox" HorizontalAlignment="Left" Height="56" Margin="669,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" FontSize="40">
+        <TextBlock x:Name="projNameBox" HorizontalAlignment="Left" Height="56" Margin="766,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" FontSize="40" TextAlignment="Center">
             <TextBlock.Effect>
                 <DropShadowEffect Color="#FFF7EFEF"/>
             </TextBlock.Effect>
         </TextBlock>
-        <Label Content="Available Users&#xA;" HorizontalAlignment="Left" Height="39" Margin="78,299,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
-        <Label Content="Assigned&#xA;" HorizontalAlignment="Left" Height="39" Margin="408,299,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
-        <ComboBox x:Name="CreateComboBox" HorizontalAlignment="Left" Margin="669,509,0,0" VerticalAlignment="Top" Width="176" Height="34" Text="Create" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Create milestone, task or subtask" Tag="Create" SelectionChanged="ComboBox_SelectionChanged_1" Initialized="CreateComboBox_Initialized" >
+        <Label Content="Available Users&#xA;" HorizontalAlignment="Left" Height="39" Margin="91,328,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
+        <Label Content="Assigned&#xA;" HorizontalAlignment="Left" Height="39" Margin="421,326,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
+        <ComboBox x:Name="CreateComboBox" HorizontalAlignment="Left" Margin="764,536,0,0" VerticalAlignment="Top" Width="176" Height="34" Text="Create" FontSize="18" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Create milestone, task or subtask" Tag="Create" SelectionChanged="ComboBox_SelectionChanged_1" Initialized="CreateComboBox_Initialized" >
             <ComboBoxItem Content="Project Item" IsEnabled="False"/>
             <ComboBoxItem Content="Document"/>
             <ComboBoxItem Content="Milestone" ToolTip="Add Milestone to current project"/>
             <ComboBoxItem Content="Task" ToolTip="Add task to current milestone"/>
             <ComboBoxItem Content="Subtask" ToolTip="Add subtask to current task"/>
         </ComboBox>
-        <Button x:Name="completeButton" Content="Complete!" HorizontalAlignment="Left" Height="35" Margin="369,56,0,0" VerticalAlignment="Top" Width="146" Click="Button_Click_2" FontSize="20" Background="#FF129312" FontFamily="Segoe Script"/>
-        <Button x:Name="notCompleteButton" Content="Mark Complete" HorizontalAlignment="Left" Height="35" Margin="369,57,0,0" VerticalAlignment="Top" Width="146" Click="Button_Click_2" FontSize="18" Background="#FFE21D13"/>
-        <TextBlock x:Name="typeBox" HorizontalAlignment="Left" Height="39" Margin="421,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Visibility="Visible"/>
-        <Label Content="Current User:" HorizontalAlignment="Left" Margin="6,5,0,0" VerticalAlignment="Top" Width="115" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
-            <Label.Effect>
-                <DropShadowEffect Color="#FFF9F5F5"/>
-            </Label.Effect>
-        </Label>
-        <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="29" Margin="111,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C">
+        <Button x:Name="completeButton" Content="Complete!" HorizontalAlignment="Left" Height="39" Margin="352,88,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click_2" Background="#FF129312" FontFamily="Segoe Script" FontSize="18"/>
+        <Button x:Name="notCompleteButton" Content="Mark Complete" HorizontalAlignment="Left" Height="39" Margin="352,88,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click_2" Background="#FFE21D13" FontSize="16"/>
+        <TextBlock x:Name="typeBox" HorizontalAlignment="Left" Height="39" Margin="1114,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Visibility="Hidden"/>
+        <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="81" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="Black" Visibility="Hidden">
             <TextBlock.Effect>
                 <DropShadowEffect Color="#FFFBF5F5"/>
             </TextBlock.Effect>
         </TextBlock>
         <GridSplitter HorizontalAlignment="Left" Height="591" Margin="614,0,0,0" VerticalAlignment="Top" Width="26"/>
-        <ComboBox x:Name="docBox" HorizontalAlignment="Left" Height="49" Margin="329,245,0,0" VerticalAlignment="Top" Width="262" SelectionChanged="docBox_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"/>
-        <Label Content="Documents&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Height="39" Margin="408,209,0,0" VerticalAlignment="Top" Width="122" FontSize="18"/>
+        <ComboBox x:Name="docBox" HorizontalAlignment="Left" Height="39" Margin="352,159,0,0" VerticalAlignment="Top" Width="235" SelectionChanged="docBox_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontSize="16"/>
+        <Label Content="Documents&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Height="39" Margin="419,161,0,0" VerticalAlignment="Top" Width="122" FontSize="18"/>
+        <TextBlock x:Name="TypeFieldBox" HorizontalAlignment="Left" Margin="25,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="103" FontSize="22"/>
+        <TextBlock x:Name="projectManagerBox" HorizontalAlignment="Left" Margin="870,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="255" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="870,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="255"/>
+        <Label Content="Project Manager" HorizontalAlignment="Left" Height="39" Margin="707,77,0,0" VerticalAlignment="Top" Width="147" FontSize="18"/>
+        <Label Content="Document Viewer" HorizontalAlignment="Left" Height="39" Margin="707,113,0,0" VerticalAlignment="Top" Width="158" FontSize="18"/>
+        <Border BorderBrush="#FF10309E" BorderThickness="1" HorizontalAlignment="Left" Height="74" Margin="698,75,0,0" VerticalAlignment="Top" Width="462"/>
+        <Label Content="Manage Items" HorizontalAlignment="Left" Height="67" Margin="173,5,0,0" VerticalAlignment="Top" Width="277" FontSize="40"/>
 
     </Grid>
 </Window>
