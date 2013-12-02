@@ -53,7 +53,7 @@ namespace PMgo
                 }
                 else if (count < 1)
                 {
-                    MessageBox.Show("You have not entered the correct email or password!  Please Try Again :)");
+                    MessageBox.Show("You have not entered the correct username or password!  Please Try Again :)");
                 }
                 else if (count > 1)
                 {
