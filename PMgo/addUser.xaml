@@ -66,6 +66,7 @@
         <TextBlock x:Name="projectNameBox" HorizontalAlignment="Left" Height="58" Margin="535,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" FontSize="36" TextAlignment="Center"/>
         <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="37" Margin="66,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" FontSize="16"/>
         <Label Content="User:" HorizontalAlignment="Left" Height="34" Margin="17,4,0,0" VerticalAlignment="Top" Width="62" FontSize="16"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="50" Margin="617,452,0,0" VerticalAlignment="Top" Width="143" FontSize="18" Click="Button_Click_7"/>
 
     </Grid>
 </Window>

@@ -69,6 +69,7 @@ namespace PMgo
         void fill_projectField()
         {
             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            projectField.Items.Clear();
             try
             {
                 conn.Open();
@@ -131,6 +132,7 @@ namespace PMgo
 
         private void projectField_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //fill_projectField();
             String project_name = this.projectField.SelectedItem.ToString();
             String user = this.current_txt.Text;
 

@@ -341,5 +341,10 @@ namespace PMgo
                 MessageBox.Show("User is already assigned!");
             }
         }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
