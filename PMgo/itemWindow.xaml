@@ -39,11 +39,11 @@
         <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="25,249,0,0" VerticalAlignment="Top" Height="42" Width="151" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
         <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="23,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14" SelectionChanged="availableUsersBox_SelectionChanged"/>
         <ListBox x:Name="assignedUsersBox" HorizontalAlignment="Left" Height="165" Margin="356,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14"/>
-        <Button Content="Add -&gt;" HorizontalAlignment="Left" Margin="254,403,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
+        <Button x:Name="addButton" Content="Add -&gt;" HorizontalAlignment="Left" Margin="254,403,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
         <Label Content="Description" HorizontalAlignment="Left" Height="39" Margin="19,127,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>
         <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="23,222,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
         <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="201,221,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
-        <Button Content="&lt;-Remove" HorizontalAlignment="Left" Margin="254,457,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
+        <Button x:Name="removeButton" Content="&lt;-Remove" HorizontalAlignment="Left" Margin="254,457,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
         <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="707,157,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14">
             <TreeView.Effect>
                 <DropShadowEffect/>

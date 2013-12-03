@@ -49,6 +49,8 @@
         </ListBox>
         <Label Content="All Projects" Grid.Column="3" HorizontalAlignment="Left" Margin="586,173,0,0" VerticalAlignment="Top" Width="140" FontSize="22"/>
         <Label Content="Welcome, " Grid.Column="3" HorizontalAlignment="Left" Height="58" Margin="42,37,0,0" VerticalAlignment="Top" Width="164" FontSize="36"/>
+        <Button Content="Your Account" Grid.Column="3" HorizontalAlignment="Left" Height="29" Margin="557,10,0,0" VerticalAlignment="Top" Width="112" Click="Button_Click_4"/>
+        <Button Content="Logout" Grid.Column="3" HorizontalAlignment="Left" Height="29" Margin="674,10,0,0" VerticalAlignment="Top" Width="112"/>
 
     </Grid>
 </Window>

@@ -71,6 +71,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="account.xaml.cs">
+      <DependentUpon>account.xaml</DependentUpon>
+    </Compile>
     <Compile Include="addMenu.xaml.cs">
       <DependentUpon>addMenu.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
     <Compile Include="viewDoc.xaml.cs">
       <DependentUpon>viewDoc.xaml</DependentUpon>
     </Compile>
+    <Page Include="account.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="addMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

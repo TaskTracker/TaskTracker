@@ -64,6 +64,38 @@ namespace PMgo
              {
                  _theUser = value;
                 this.current_txt.Text = _theUser;
+                verification();
+             }
+
+         }
+
+         void verification()
+         {
+             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+             try
+             {
+                 conn.Open();
+                 string query = "select user_name from users join projects on (projects.proj_mgr = users.id) where projects.project_name = '" + this.projNameBox.Text + "' and users.id = projects.proj_mgr;";
+                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                 SQLiteDataReader dr = createCommand.ExecuteReader();
+
+                 while (dr.Read())
+                 {
+                     string manager = dr.GetString(0);
+                     //MessageBox.Show(manager);
+                     //MessageBox.Show(this.current_txt.Text);
+                     if (manager != this.current_txt.Text)
+                     {
+                         deleteButton.Visibility = Visibility.Hidden;
+                         addButton.Visibility = Visibility.Hidden;
+                         removeButton.Visibility = Visibility.Hidden;
+                         
+                     }
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(ex.Message);
              }
 
          }

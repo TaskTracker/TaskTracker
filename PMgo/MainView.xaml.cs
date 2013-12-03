@@ -29,6 +29,7 @@ namespace PMgo
 			//fillProgressBar();
 			PopulateTreeView();
             expandTreeView(ProjectTreeView);
+            //verification();
 		   
 		}
 		string dbConnectionString = "Data Source=PMgo.sqlite;Version=3;";
@@ -41,7 +42,7 @@ namespace PMgo
 			set;
 		}
 
-        
+               
         string _theUser;
   
         public string UserValue
@@ -51,12 +52,40 @@ namespace PMgo
             {
                 _theUser = value;
                 this.current_txt.Text = _theUser;
+                verification();
 
             }
 
         }
 
+        void verification()
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+			try
+			{
+				conn.Open();
+				string query = "select user_name from users join projects on (projects.proj_mgr = users.id) where projects.project_name = '" + this.projectNameField.Text + "' and users.id = projects.proj_mgr;";
+				SQLiteCommand createCommand = new SQLiteCommand(query, conn);				
+				SQLiteDataReader dr = createCommand.ExecuteReader();
+                
+				while (dr.Read())
+				{
+                    string manager = dr.GetString(0);
+                    //MessageBox.Show(manager);
+                    //MessageBox.Show(this.current_txt.Text);
+                    if (manager != this.current_txt.Text)
+                    {
+                        cancelProjectButton.Visibility = Visibility.Hidden;
+                        manageMembersButton.Visibility = Visibility.Hidden;
+                    }
+				}
+            }
+            catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 
+        }
 		void fillProgressBar()
 		{
             string Text1;

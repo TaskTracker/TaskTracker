@@ -154,6 +154,8 @@ namespace PMgo
              
         }
 
+       
+
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             String project_name = this.user_projectField.SelectedItem.ToString();
@@ -172,6 +174,14 @@ namespace PMgo
             MainView mainView = new MainView(project_name);
             mainView.UserValue = user;
             mainView.ShowDialog();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            string userName = this.current_txt.Text;
+            account userAccount = new account();
+            userAccount.UserValue = userName;
+            userAccount.ShowDialog();
         }
     }
 }

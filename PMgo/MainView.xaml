@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainView" Height="602.963" Width="1140.331" WindowStartupLocation="CenterScreen" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Grid>
-        <Button Content="Manage Members" Margin="806,224,0,0" Width="172" Click="Button_Click_2" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" FontSize="18"/>
+        <Button x:Name="manageMembersButton" Content="Manage Members" Margin="806,224,0,0" Width="172" Click="Button_Click_2" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" FontSize="18"/>
         <Button Content="Manage Items" Margin="806,272,0,0" Width="172" Click="Button_Click_4" Height="43" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0" FontSize="18"/>
         <TreeView x:Name="ProjectTreeView" HorizontalAlignment="Left" Height="290" Margin="190,222,0,0" VerticalAlignment="Top" Width="541" FontSize="14">
             <TreeView.Effect>
@@ -16,7 +16,7 @@
         <TextBlock x:Name="progressBar_txt" HorizontalAlignment="Left" Height="62" Margin="408,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" TextAlignment="Center" FontSize="18" FontFamily="Segoe UI Light"/>
         <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="54" Margin="193,4,0,0" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Width="538" FontSize="24"/>
         <Button Content="Cancel" HorizontalAlignment="Left" Height="46" Margin="806,466,0,0" VerticalAlignment="Top" Width="172" FontSize="18" Click="Button_Click_5"/>
-        <Button Content="Cancel Project" HorizontalAlignment="Left" Height="48" Margin="806,368,0,0" VerticalAlignment="Top" Width="172" FontSize="18" Click="Button_Click_6"/>
+        <Button x:Name="cancelProjectButton" Content="Cancel Project" HorizontalAlignment="Left" Height="48" Margin="806,368,0,0" VerticalAlignment="Top" Width="172" FontSize="18" Click="Button_Click_6"/>
 
     </Grid>
 </Window>
