@@ -151,7 +151,7 @@ namespace PMgo
             AddProject project = new AddProject();
             project.UserValue = username;
             project.ShowDialog();
-            this.Close();
+             
         }
 
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
