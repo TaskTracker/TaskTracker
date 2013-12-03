@@ -466,6 +466,31 @@ namespace PMgo
             this.Close();
         }
 
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to cancel this project?", "Cancel Confirmation", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "delete from projects where project_name = '" + this.projectNameField.Text + "'";
+
+                    SQLiteCommand createcommand = new SQLiteCommand(query, conn);
+                    createcommand.ExecuteNonQuery();
+                    MessageBox.Show("Project has been canceled!");
+
+                    conn.Close();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
  
 	}
 
