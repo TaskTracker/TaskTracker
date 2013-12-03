@@ -18,7 +18,7 @@
         <Button Content="Cancel" HorizontalAlignment="Left" Height="46" Margin="261,516,0,0" VerticalAlignment="Top" Width="172" FontSize="18" Click="Button_Click_5"/>
         <Button x:Name="cancelProjectButton" Content="Cancel Project" HorizontalAlignment="Left" Height="48" Margin="806,368,0,0" VerticalAlignment="Top" Width="172" FontSize="18" Click="Button_Click_6"/>
         <Button x:Name="IMusers" Content="Message System" HorizontalAlignment="Left" Height="50" Margin="930,522,0,0" VerticalAlignment="Top" Width="202" Click="IMusers_Click"/>
-        <Button Content="Edit Project" HorizontalAlignment="Left" Height="45" Margin="806,318,0,0" VerticalAlignment="Top" Width="172" FontSize="20" Click="Button_Click_7"/>
+        <Button Content="Edit Project" HorizontalAlignment="Left" Height="45" Margin="806,318,0,0" VerticalAlignment="Top" Width="172" FontSize="18" Click="Button_Click_7"/>
 
     </Grid>
 </Window>
