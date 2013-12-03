@@ -36,6 +36,7 @@ namespace PMgo
             expandTreeView(ItemTreeView);
 			this.completeButton.Visibility = Visibility.Hidden;
             this.notCompleteButton.Visibility = Visibility.Hidden;
+            this.review_chk.Visibility = Visibility.Hidden;
         }
 
         string _theValue;
@@ -714,15 +715,18 @@ namespace PMgo
                     if (typeBox.Text == "milestone")
                     {
                         TypeFieldBox.Text = "Milestone";
+                        this.review_chk.Visibility = Visibility.Hidden;
                     }
 
                     else if (typeBox.Text == "task")
                     {
+                        this.review_chk.Visibility = Visibility.Visible;
                         TypeFieldBox.Text = "Task";
                     }
 
                     else if (typeBox.Text == "subtask")
                     {
+                        this.review_chk.Visibility = Visibility.Visible;
                         TypeFieldBox.Text = "Subtask";
                     }
                     statusButtons();
@@ -1008,6 +1012,7 @@ namespace PMgo
                             + "', task_start = '" + this.startBox.Text
                             + "', task_end = '" + this.endBox.Text
                             + "'";
+                             
 
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
@@ -1054,10 +1059,74 @@ namespace PMgo
             }
         }
 
+        private void review_chk_Checked(object sender, RoutedEventArgs e)
+        {
+         SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+
+            // open connection to database
+            conn.Open();
+            try
+            {
+
+                string Query = "";
+                if (this.typeBox.Text == "task")
+                {
+                    Query = "select complete from tasks where task_id = (select task_id where task_name = '" + this.nameBox.Text + "');";
+                    SQLiteCommand createCommand = new SQLiteCommand(Query, conn);
+                    SQLiteDataReader dr = createCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        int complete = dr.GetInt32(0);
+                        if (complete == 1)
+                        {
+                            MessageBox.Show("Cannot set Ready for Review while Task is in 'Completed' status");
+                            this.review_chk.IsChecked = false;
+                        }
+                        else
+                        {
+                        
+                        }
+
+                    }
+                }
+
+                else if (this.typeBox.Text == "subtask")
+                {
+                    Query = "select complete from subtasks where subtask_id = (select subtask_id where subtask_name = '" + this.nameBox.Text + "');";
+                    SQLiteCommand createCommand = new SQLiteCommand(Query, conn);
+                    SQLiteDataReader dr = createCommand.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        int complete = dr.GetInt32(0);
+                        if (complete == 1)
+                        {
+                            MessageBox.Show("Cannot set Ready for Review while SubTask is in 'Completed' status");
+                            this.review_chk.IsChecked = false;
+                        }
+                        else
+                        {
+                            
+                        }
+
+                    }
+                }
+           
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
+        }       
+     
+    }
+}
+    
+
         
 
                 
        
      
-    }
-}
+ 

@@ -111,13 +111,14 @@
         <GridSplitter HorizontalAlignment="Left" Height="591" Margin="614,0,0,0" VerticalAlignment="Top" Width="26"/>
         <ComboBox x:Name="docBox" HorizontalAlignment="Left" Height="39" Margin="352,159,0,0" VerticalAlignment="Top" Width="235" SelectionChanged="docBox_SelectionChanged" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" FontSize="16"/>
         <Label Content="Documents&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Height="39" Margin="419,161,0,0" VerticalAlignment="Top" Width="122" FontSize="18"/>
-        <TextBlock x:Name="TypeFieldBox" HorizontalAlignment="Left" Margin="25,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="103" FontSize="22"/>
+        <TextBlock x:Name="TypeFieldBox" HorizontalAlignment="Left" Margin="25,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="103" FontSize="22" FontWeight="Bold"/>
         <TextBlock x:Name="projectManagerBox" HorizontalAlignment="Left" Margin="870,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="255" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="870,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" Width="255"/>
         <Label Content="Project Manager" HorizontalAlignment="Left" Height="39" Margin="707,77,0,0" VerticalAlignment="Top" Width="147" FontSize="18"/>
         <Label Content="Document Viewer" HorizontalAlignment="Left" Height="39" Margin="707,113,0,0" VerticalAlignment="Top" Width="158" FontSize="18"/>
         <Border BorderBrush="#FF10309E" BorderThickness="1" HorizontalAlignment="Left" Height="74" Margin="698,75,0,0" VerticalAlignment="Top" Width="462"/>
         <Label Content="Manage Items" HorizontalAlignment="Left" Height="67" Margin="173,5,0,0" VerticalAlignment="Top" Width="277" FontSize="40"/>
+        <CheckBox x:Name="review_chk" Content="Ready for Review" HorizontalAlignment="Left" Margin="395,261,0,0" VerticalAlignment="Top" Width="158" FontSize="18" Checked="review_chk_Checked"/>
 
     </Grid>
 </Window>
