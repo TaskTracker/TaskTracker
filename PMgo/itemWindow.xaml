@@ -37,8 +37,8 @@
         </TextBox>
         <DatePicker x:Name="endBox" HorizontalAlignment="Left" Margin="183,248,0,0" VerticalAlignment="Top" Height="43" Width="145" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
         <DatePicker x:Name="startBox" HorizontalAlignment="Left" Margin="25,249,0,0" VerticalAlignment="Top" Height="42" Width="151" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}"/>
-        <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="23,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light" SelectionChanged="availableUsersBox_SelectionChanged"/>
-        <ListBox x:Name="AssignedUsersBox" HorizontalAlignment="Left" Height="165" Margin="356,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="18" FontFamily="Segoe UI Light"/>
+        <ListBox x:Name="availableUsersBox" HorizontalAlignment="Left" Height="165" Margin="23,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14" SelectionChanged="availableUsersBox_SelectionChanged"/>
+        <ListBox x:Name="assignedUsersBox" HorizontalAlignment="Left" Height="165" Margin="356,361,0,0" VerticalAlignment="Top" Width="224" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14"/>
         <Button Content="Add -&gt;" HorizontalAlignment="Left" Margin="254,403,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
         <Label Content="Description" HorizontalAlignment="Left" Height="39" Margin="19,127,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>
         <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="23,222,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
@@ -50,7 +50,7 @@
             </TreeView.Effect>
         </TreeView>
 
-        <Button Content="Edit" HorizontalAlignment="Left" Height="34" Margin="26,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
+        <Button Content="Save" HorizontalAlignment="Left" Height="34" Margin="26,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0"/>
@@ -100,7 +100,7 @@
             <ComboBoxItem Content="Task" ToolTip="Add task to current milestone"/>
             <ComboBoxItem Content="Subtask" ToolTip="Add subtask to current task"/>
         </ComboBox>
-        <Button x:Name="completeButton" Content="Complete!" HorizontalAlignment="Left" Height="39" Margin="352,88,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click_2" Background="#FF129312" FontFamily="Segoe Script" FontSize="18"/>
+        <Button x:Name="completeButton" Content="Complete!" HorizontalAlignment="Left" Height="39" Margin="352,88,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click_2" Background="#FF129312" FontFamily="Segoe Script" FontSize="18" Visibility="Visible"/>
         <Button x:Name="notCompleteButton" Content="Mark Complete" HorizontalAlignment="Left" Height="39" Margin="352,88,0,0" VerticalAlignment="Top" Width="119" Click="Button_Click_2" Background="#FFE21D13" FontSize="16"/>
         <TextBlock x:Name="typeBox" HorizontalAlignment="Left" Height="39" Margin="1114,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" Visibility="Hidden"/>
         <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="81" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="Black" Visibility="Hidden">

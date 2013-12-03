@@ -30,7 +30,7 @@ namespace PMgo
             this.ProjectNameValue = this.projNameBox.Text;
             PopulateTreeView();
             fillDocBox();
-            //fillProjectManagerBox();
+            fillAssignedUsersBox();
 
 			//need to populate the treeview before expaninding it.
             expandTreeView(ItemTreeView);
@@ -126,6 +126,53 @@ namespace PMgo
              }
          }
 
+         void fillAssignedUsersBox()
+         {
+             SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+             assignedUsersBox.Items.Clear();
+             // open connection to database
+             try
+             {
+                 
+                 conn.Open();
+                 if (this.typeBox.Text == "task")
+                 {
+                     //MessageBox.Show(this.project_txt.Text);
+                     string query = "select user_name from users join users_tasks on (users_tasks.user_id = users.id) where users.id = users_tasks.user_id and users_tasks.task_id = (select task_id from tasks where task_name = '" + nameBox.Text + "');";
+                     //MessageBox.Show(query);
+                     SQLiteCommand createcommand = new SQLiteCommand(query, conn);
+                     SQLiteDataReader dr = createcommand.ExecuteReader();
+
+                     while (dr.Read())
+                     {
+                         string userName = dr.GetString(0);
+                         assignedUsersBox.Items.Add(userName);
+                     }
+
+                 }
+                 else if (this.typeBox.Text == "subtask")
+                 {
+                     //MessageBox.Show(this.project_txt.Text);
+                     string query = "select user_name from users join users_subtasks on (users_subtasks.user_id = users.id) where users.id = users_subtasks.user_id and users_subtasks.subtask_id = (select subtask_id from subtasks where subtask_name = '" + nameBox.Text + "');";
+                     //MessageBox.Show(query);
+                     SQLiteCommand createcommand = new SQLiteCommand(query, conn);
+                     SQLiteDataReader dr = createcommand.ExecuteReader();
+
+                     while (dr.Read())
+                     {
+                         string userName = dr.GetString(0);
+                         assignedUsersBox.Items.Add(userName);
+                     }
+
+                 }
+                 
+                 
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(ex.Message);
+             }
+         }
 
         void clearInputItems()
         {
@@ -146,7 +193,39 @@ namespace PMgo
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
 
+            try
+            {
+                conn.Open();
+                if (this.typeBox.Text == "task")
+                {
+                    string query = "insert into users_tasks (user_id, task_id) select id, task_id from users, tasks where users.user_name = '"
+                                + this.availableUsersBox.SelectedItem + "'and tasks.task_name = '" + this.nameBox.Text + "';";
+                    //MessageBox.Show(query);
+                    SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                    createCommand.ExecuteNonQuery();
+                    MessageBox.Show("User was Assigned!");
+                    fillAssignedUsersBox();
+                    conn.Close();
+                }
+                else if (this.typeBox.Text == "subtask")
+                {
+                    string query = "insert into users_subtasks (user_id, subtask_id) select id, subtask_id from users, subtasks where users.user_name = '"
+                                + this.availableUsersBox.SelectedItem + "'and subtasks.subtask_name = '" + this.nameBox.Text + "';";
+                    //MessageBox.Show(query);
+                    SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                    createCommand.ExecuteNonQuery();
+                    MessageBox.Show("User was Assigned!");
+                    fillAssignedUsersBox();
+                    conn.Close();
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("User is already assigned!");
+            }
         }
 
         private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -616,6 +695,7 @@ namespace PMgo
 
                 docBox.Items.Clear();
                 fillDocBox();
+                fillAssignedUsersBox();
 
             }
             catch (Exception ex)
@@ -652,6 +732,8 @@ namespace PMgo
                 createcommand.ExecuteNonQuery();
                 MessageBox.Show("Item is now complete!");
                 this.notCompleteButton.Visibility = Visibility.Hidden;
+                this.completeButton.Visibility = Visibility.Visible;
+                ItemTreeView.Items.Clear();
                 PopulateTreeView();
 				
                 expandTreeView(ItemTreeView);
