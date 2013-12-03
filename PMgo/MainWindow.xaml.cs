@@ -183,5 +183,10 @@ namespace PMgo
             userAccount.UserValue = userName;
             userAccount.ShowDialog();
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
