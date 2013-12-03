@@ -86,7 +86,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="projNameBox" HorizontalAlignment="Left" Height="56" Margin="766,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" FontSize="40" TextAlignment="Center">
+        <TextBlock x:Name="projNameBox" HorizontalAlignment="Left" Height="56" Margin="662,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="536" FontSize="40" TextAlignment="Center">
             <TextBlock.Effect>
                 <DropShadowEffect Color="#FFF7EFEF"/>
             </TextBlock.Effect>

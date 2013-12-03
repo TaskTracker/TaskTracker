@@ -508,7 +508,7 @@ namespace PMgo
             {
                 conn.Open();
                 string query = "select user_name from users join projects on (projects.proj_mgr = users.id) where project_name = '" + this.projNameBox.Text + "';";
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 SQLiteCommand createcommand = new SQLiteCommand(query, conn);
                 SQLiteDataReader dr = createcommand.ExecuteReader();
                 while (dr.Read())
