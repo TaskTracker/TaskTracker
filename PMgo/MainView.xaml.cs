@@ -442,12 +442,12 @@ namespace PMgo
 			
 		}
 
-		private void Refresh_Click(object sender, RoutedEventArgs e)
-		{
-			//fillProgressBar();
-			PopulateTreeView();
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            //fillProgressBar();
+            PopulateTreeView();
             expandTreeView(ProjectTreeView);
-		}
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
