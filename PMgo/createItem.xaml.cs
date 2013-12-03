@@ -55,7 +55,7 @@ namespace PMgo
                 //this.ProjectValue = this.projectNameBox.Text;
                 conn.Open();
                 string query = "select milestone_name from milestones where project_id = (select project_id from projects where project_name = '" + this.projectNameBox.Text + "');";
-                MessageBox.Show(query);
+               // MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();

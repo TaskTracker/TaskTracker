@@ -276,7 +276,7 @@ namespace PMgo
                                                                 + "', '" + this.startBox.Text
                                                                 + "', '" + this.endBox.Text
                                                                 + "', (select milestone_id from milestones where milestone_name = '" + this.parent_combo.SelectedItem + "')) ;";
-                    MessageBox.Show(query);
+                    //MessageBox.Show(query);
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
                     MessageBox.Show("Task Was Added!");
@@ -292,7 +292,7 @@ namespace PMgo
                                                                 + "', '" + this.startBox.Text
                                                                 + "', '" + this.endBox.Text
                                                                 + "',(select project_id from projects where project_name = '" + this.project_txt.Text + "'));";
-                    MessageBox.Show(query);
+                    //MessageBox.Show(query);
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
                     MessageBox.Show("Milestone Was Added!");
@@ -308,7 +308,7 @@ namespace PMgo
                                                                 + "', '" + this.startBox.Text
                                                                 + "', '" + this.endBox.Text
                                                                 + "');";
-                    MessageBox.Show(query);
+                    //MessageBox.Show(query);
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
                     MessageBox.Show("Subtask Was Added!");
