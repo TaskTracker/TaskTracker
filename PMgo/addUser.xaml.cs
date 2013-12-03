@@ -132,7 +132,7 @@ namespace PMgo
             {
                 conn.Open();
                 string query = "select user_name from users join projects on (projects.doc_mgr = users.id) where project_name = '" + this.projectNameBox.Text + "' and projects.doc_mgr = users.id;";
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();
@@ -161,7 +161,7 @@ namespace PMgo
             {
                 conn.Open();
                 string query = "select user_name from users join projects on (projects.doc_reviewer = users.id) where project_name = '" + this.projectNameBox.Text + "' and projects.doc_reviewer = users.id;";
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();
@@ -191,7 +191,7 @@ namespace PMgo
                 assignedUsersBox.Items.Clear();
                 conn.Open();
                 string query = "select user_name from users join projects_users on (projects_users.user_id = users.id) where users.id = projects_users.user_id and projects_users.proj_id = (select project_id from projects where project_name = '" + ProjectNameValue + "');";
-                MessageBox.Show(query);
+                //MessageBox.Show(query);
                 SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                 //createCommand.ExecuteNonQuery();
                 SQLiteDataReader dr = createCommand.ExecuteReader();
@@ -424,7 +424,7 @@ namespace PMgo
 
 
                         string query2 = "update projects set doc_mgr =" + userID + " where project_name = '" + this.projectNameBox.Text + "';";
-                        MessageBox.Show(query2);
+                        //MessageBox.Show(query2);
                         SQLiteCommand createCommand2 = new SQLiteCommand(query2, conn);
                         createCommand2.ExecuteNonQuery();
                         MessageBox.Show("User was assigned as Document Manager!");
@@ -459,7 +459,7 @@ namespace PMgo
 
 
                         string query2 = "update projects set doc_reviewer=" + userID + " where project_name = '" + this.projectNameBox.Text + "';";
-                        MessageBox.Show(query2);
+                        //MessageBox.Show(query2);
                         SQLiteCommand createCommand2 = new SQLiteCommand(query2, conn);
                         createCommand2.ExecuteNonQuery();
                         MessageBox.Show("User was assigned as Document Reviewer!");
