@@ -145,12 +145,71 @@ namespace PMgo
 
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+            try
+            {
+                conn.Open();
+                string query = "select * from projects where project_name = '" + projListBox.SelectedItem.ToString() + "' ;";
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                //createCommand.ExecuteNonQuery();
+                SQLiteDataReader dr = createCommand.ExecuteReader();
+                while (dr.Read())
+                {
+                    string projname = dr.GetString(2);
+                    string start = dr.GetString(3);
+                    string end = dr.GetString(4);
+                    string description = dr.GetString(5);
+                    
 
+                    projNameField.Text = projname;
+                    startField.Text = start;
+                    endField.Text = end;
+                    descriptionField.Text = description;                  
+
+
+                }
+
+                //userNameBox.Items.Clear();
+                //fill_userBox();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                conn.Open();
+                string query = "update projects set project_name = '" + this.projNameField.Text
+                            + "', start_date = '" + this.startField.Text
+                            + "', end_date = '" + this.endField.Text
+                            + "', description = '" + this.descriptionField.Text
+                            + "' where project_name = '" + this.projListBox.SelectedItem +"';";
+
+                SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                createCommand.ExecuteNonQuery();
+                //userNameBox.Items.Refresh();
+                MessageBox.Show("Project Was Modified!");
+                conn.Close();
+                //fill_userNameBox();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
        

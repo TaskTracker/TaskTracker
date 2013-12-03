@@ -43,7 +43,6 @@
         <Label Content="Description" HorizontalAlignment="Left" Height="39" Margin="19,127,0,0" VerticalAlignment="Top" Width="100" FontSize="18"/>
         <Label Content="Start Date&#xD;&#xA;" HorizontalAlignment="Left" Height="39" Margin="23,222,0,0" VerticalAlignment="Top" Width="93" FontSize="18"/>
         <Label Content="End Date&#xA;" HorizontalAlignment="Left" Height="39" Margin="201,221,0,0" VerticalAlignment="Top" Width="85" FontSize="18"/>
-        <Button x:Name="removeButton" Content="&lt;-Remove" HorizontalAlignment="Left" Margin="254,457,0,0" VerticalAlignment="Top" Width="97" Height="37" Click="Button_Click_1" FontSize="14" FontFamily="Segoe UI Semibold"/>
         <TreeView x:Name="ItemTreeView" HorizontalAlignment="Left" Height="351" Margin="707,157,0,0" VerticalAlignment="Top" Width="442" SelectedItemChanged="TreeView_OnSelectedItemChanged" Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" FontSize="14">
             <TreeView.Effect>
                 <DropShadowEffect/>
@@ -119,6 +118,7 @@
         <Border BorderBrush="#FF10309E" BorderThickness="1" HorizontalAlignment="Left" Height="74" Margin="698,75,0,0" VerticalAlignment="Top" Width="462"/>
         <Label Content="Manage Items" HorizontalAlignment="Left" Height="67" Margin="173,5,0,0" VerticalAlignment="Top" Width="277" FontSize="40"/>
         <CheckBox x:Name="review_chk" Content="Ready for Review" HorizontalAlignment="Left" Margin="395,261,0,0" VerticalAlignment="Top" Width="158" FontSize="18" Checked="review_chk_Checked"/>
+        <Button x:Name="removeButton" Content="&lt;-Remove" HorizontalAlignment="Left" Height="37" Margin="254,461,0,0" VerticalAlignment="Top" Width="97" FontSize="14" FontFamily="Segoe UI Semibold" Click="Button_Click_4"/>
 
     </Grid>
 </Window>

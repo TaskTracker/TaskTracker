@@ -29,7 +29,7 @@ namespace PMgo
 			//fillProgressBar();
 			PopulateTreeView();
             expandTreeView(ProjectTreeView);
-            //verification();
+            //fill_IMusersBox();
 		   
 		}
 		string dbConnectionString = "Data Source=PMgo.sqlite;Version=3;";
@@ -57,6 +57,8 @@ namespace PMgo
             }
 
         }
+
+        
 
         void verification()
         {
@@ -519,6 +521,18 @@ namespace PMgo
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void IMusers_Click(object sender, RoutedEventArgs e)
+        {
+            IMWindow im = new IMWindow();
+            im.ShowDialog();
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            AddProject edit = new AddProject();
+            edit.ShowDialog();
         }
  
 	}

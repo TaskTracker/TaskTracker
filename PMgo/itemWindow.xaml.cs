@@ -238,7 +238,7 @@ namespace PMgo
                     //MessageBox.Show(query);
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
-                    MessageBox.Show("User was Assigned!");
+                    //MessageBox.Show("User was Assigned!");
                     fillAssignedUsersBox();
                     conn.Close();
                 }
@@ -249,7 +249,7 @@ namespace PMgo
                     //MessageBox.Show(query);
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
-                    MessageBox.Show("User was Assigned!");
+                    //MessageBox.Show("User was Assigned!");
                     fillAssignedUsersBox();
                     conn.Close();
                 }
@@ -1118,6 +1118,47 @@ namespace PMgo
             {
                 MessageBox.Show(ex.Message);
             }            
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                conn.Open();
+                if (this.typeBox.Text == "task")
+                {
+                    string query = "delete from users_tasks where user_id = (select id from users where user_name = '"
+                                + this.assignedUsersBox.SelectedItem + "') and task_id = (select task_id from tasks where task_name = '" + this.nameBox.Text + "');";
+                    //MessageBox.Show(query);
+                    SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                    createCommand.ExecuteNonQuery();
+                    //MessageBox.Show("User was Removed!");
+                    fillAssignedUsersBox();
+                    conn.Close();
+                }
+                else if (this.typeBox.Text == "subtask")
+                {
+                    string query = "delete from users_subtasks where user_id = (select id from users where user_name ='"
+                                + this.assignedUsersBox.SelectedItem + "') and subtask_id = (select subtask_id from subtasks where subtask_name = '" + this.nameBox.Text + "');";
+                    //MessageBox.Show(query);
+                    SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                    createCommand.ExecuteNonQuery();
+                    //MessageBox.Show("User was Removed!");
+                    fillAssignedUsersBox();
+                    conn.Close();
+                }
+                else
+                {
+                    MessageBox.Show("You must Choose a Task or a Subtask to add a Team Member to!");
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("User is already assigned!");
+            }
         }       
      
     }

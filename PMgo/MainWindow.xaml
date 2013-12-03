@@ -24,7 +24,7 @@
                 <DropShadowEffect/>
             </ListBox.Effect>
         </ListBox>
-        <Button Content="Add a New Project" Grid.Column="3" HorizontalAlignment="Left" Height="55" Margin="149,455,0,0" VerticalAlignment="Top" Width="327" Click="Button_Click_3" FontSize="36" FontFamily="Segoe UI Light">
+        <Button Content="Create New Project" Grid.Column="3" HorizontalAlignment="Left" Height="55" Margin="149,455,0,0" VerticalAlignment="Top" Width="327" Click="Button_Click_3" FontSize="36" FontFamily="Segoe UI Light">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
