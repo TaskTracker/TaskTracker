@@ -20,9 +20,12 @@
         <Label Content="Estimated End" HorizontalAlignment="Left" Margin="1,235,0,0" VerticalAlignment="Top" Height="41" Width="138" FontSize="20" Grid.Column="1"/>
         <Label Content=" Description" HorizontalAlignment="Left" Margin="0,281,0,0" VerticalAlignment="Top" Height="41" Width="124" FontSize="20" Grid.Column="1"/>
         <Button Content="Add Project" Grid.Column="2" HorizontalAlignment="Left" Margin="10,419,0,0" VerticalAlignment="Top" Width="165" Height="51" FontSize="18" Click="Button_Click_1"/>
-        <Image HorizontalAlignment="Left" Height="79" Margin="771,10,0,0" VerticalAlignment="Top" Width="132" Source="egi-consulting-project-management.jpg" Grid.Column="2"/>
-        <ListBox x:Name="projListBox" Grid.Column="2" HorizontalAlignment="Left" Height="375" Margin="465,95,0,0" VerticalAlignment="Top" Width="328" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Foreground="Black" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18"/>
-        <Label Content="Current Projects" Grid.Column="2" HorizontalAlignment="Left" Margin="549,45,0,0" VerticalAlignment="Top" Width="176" Height="44" FontSize="20"/>
+        <ListBox x:Name="projListBox" Grid.Column="2" HorizontalAlignment="Left" Height="375" Margin="465,95,0,0" VerticalAlignment="Top" Width="328" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Foreground="Black" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+        </ListBox>
+        <Label Content="Current Projects" Grid.Column="2" HorizontalAlignment="Left" Margin="497,31,0,0" VerticalAlignment="Top" Width="262" Height="61" FontSize="36" FontFamily="Segoe UI Light"/>
         <Button Content="Cancel" Grid.Column="2" HorizontalAlignment="Left" Margin="198,421,0,0" VerticalAlignment="Top" Width="165" Height="51" FontSize="18" Click="Button_Click_2" />
         <TextBlock x:Name="current_txt" Grid.Column="1" HorizontalAlignment="Left" Height="21" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" FontSize="18" FontFamily="Segoe UI Light" FontWeight="Bold" Foreground="#FFFB0C0C" Visibility="Hidden">
             <TextBlock.Effect>
