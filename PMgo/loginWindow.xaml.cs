@@ -72,6 +72,12 @@ namespace PMgo
 
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            forgetPassword forget = new forgetPassword();
+            forget.ShowDialog();
+        }
+
        
     }
 }

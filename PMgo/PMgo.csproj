@@ -98,6 +98,9 @@
     <Compile Include="createSubtask.xaml.cs">
       <DependentUpon>createSubtask.xaml</DependentUpon>
     </Compile>
+    <Compile Include="forgetPassword.xaml.cs">
+      <DependentUpon>forgetPassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="itemWindow.xaml.cs">
       <DependentUpon>itemWindow.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="createSubtask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forgetPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
