@@ -220,6 +220,10 @@ namespace PMgo
                     fillAssignedUsersBox();
                     conn.Close();
                 }
+                else
+                {
+                    MessageBox.Show("You must Choose a Task or a Subtask to add a Team Member to!");
+                }
                 
             }
             catch (Exception)
