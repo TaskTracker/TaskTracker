@@ -961,6 +961,67 @@ namespace PMgo
            
         }
 
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            SQLiteConnection conn = new SQLiteConnection(dbConnectionString);
+
+            try
+            {
+                conn.Open();
+
+                if (this.typeBox.Text == "task")
+                {
+                    string query = "update tasks set task_name = '" + this.nameBox.Text
+                            + "', task_description = '" + this.descriptionBox.Text
+                            + "', task_start = '" + this.startBox.Text
+                            + "', task_end = '" + this.endBox.Text
+                            + "'";
+
+                    SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                    createCommand.ExecuteNonQuery();
+                    
+                    MessageBox.Show("Task Was Modified!");
+                    conn.Close();
+                    
+                }
+                else if (this.typeBox.Text == "subtask")
+                {
+                    string query = "update subtasks set subtask_name = '" + this.nameBox.Text
+                            + "', subtask_description = '" + this.descriptionBox.Text
+                            + "', subtask_start = '" + this.startBox.Text
+                            + "', subtask_end = '" + this.endBox.Text
+                            + "'";
+
+                    SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                    createCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Subtask Was Modified!");
+                    conn.Close();
+                }
+                else if (this.typeBox.Text == "milestone")
+                {
+                    string query = "update milestones set milestone_name = '" + this.nameBox.Text
+                            + "', milestone_desc = '" + this.descriptionBox.Text
+                            + "', milestone_start = '" + this.startBox.Text
+                            + "', milestone_end = '" + this.endBox.Text
+                            + "' where milestone_name = '" + this.nameBox.Text + "'";
+
+                    SQLiteCommand createCommand = new SQLiteCommand(query, conn);
+                    createCommand.ExecuteNonQuery();
+
+                    MessageBox.Show("Milestone Was Modified!");
+                    conn.Close();
+                }
+                
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         
 
                 

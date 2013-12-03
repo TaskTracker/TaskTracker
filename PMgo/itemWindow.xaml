@@ -50,7 +50,7 @@
             </TreeView.Effect>
         </TreeView>
 
-        <Button Content="Save" HorizontalAlignment="Left" Height="34" Margin="26,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" >
+        <Button Content="Save" HorizontalAlignment="Left" Height="34" Margin="26,537,0,0" VerticalAlignment="Top" Width="132" FontSize="22" Click="Button_Click_3" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0"/>
