@@ -461,6 +461,11 @@ namespace PMgo
             itemWin.ShowDialog();
         }
 
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
  
 	}
 

@@ -15,6 +15,7 @@
         <ProgressBar x:Name="projectProgress" HorizontalAlignment="Left" Height="62" Margin="190,127,0,0" VerticalAlignment="Top" Width="541"/>
         <TextBlock x:Name="progressBar_txt" HorizontalAlignment="Left" Height="62" Margin="408,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" TextAlignment="Center" FontSize="18" FontFamily="Segoe UI Light"/>
         <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="54" Margin="193,4,0,0" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Width="538" FontSize="24"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="46" Margin="806,368,0,0" VerticalAlignment="Top" Width="172" FontSize="18" Click="Button_Click_5"/>
 
     </Grid>
 </Window>
