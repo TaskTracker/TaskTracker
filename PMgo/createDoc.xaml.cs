@@ -98,7 +98,7 @@ namespace PMgo
                                                                                                                  this.descBox.Text + "','" +
                                                                                                                  this.locationBox.Text +
                                                                                                                  "',(select task_id from tasks where task_name = '" + this.parentBox.Text + "'));";
-                    System.Windows.Forms.MessageBox.Show(query);
+                  //  System.Windows.Forms.MessageBox.Show(query);
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
                     System.Windows.MessageBox.Show("document Was Added!");
