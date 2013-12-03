@@ -6,11 +6,10 @@
         <Button Content="Browse" Height="23" HorizontalAlignment="Left" Margin="53,223,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" OpacityMask="#9BE14B19" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="158,63,0,0" x:Name="docName" VerticalAlignment="Top" Width="120" />
         <Button Content="submit" Height="23" HorizontalAlignment="Left" Margin="53,251,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" OpacityMask="#9BE340DB" />
-        <TextBox Height="242" HorizontalAlignment="Left" Margin="158,146,0,0" x:Name="contentBox" VerticalAlignment="Top" Width="577" />
+        <TextBox Height="242" HorizontalAlignment="Left" Margin="158,146,0,0" x:Name="contentBox" VerticalAlignment="Top" Width="478" />
         <Label Content="Add Document" Height="28" HorizontalAlignment="Left" Margin="48,190,0,0" Name="label1" VerticalAlignment="Top" Width="92" />
-        <ScrollBar Height="293" HorizontalAlignment="Left" Margin="717,95,0,0" Name="scrollBar1" VerticalAlignment="Top" Width="18" ValueChanged="scrollBar1_ValueChanged" />
         <TextBlock x:Name="parentBox" HorizontalAlignment="Left" Height="32" Margin="126,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <Label Content="Parent Name" Height="28" HorizontalAlignment="Left" Margin="35,17,0,0" x:Name="label1_Copy" VerticalAlignment="Top" Width="122" />
+        <Label Content="Parent Name" Height="28" HorizontalAlignment="Left" Margin="35,12,0,0" x:Name="label1_Copy" VerticalAlignment="Top" Width="122" />
         <TextBox x:Name="typeBox" HorizontalAlignment="Left" Height="23" Margin="615,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Document Name" Height="28" HorizontalAlignment="Left" Margin="48,63,0,0" x:Name="label1_Copy1" VerticalAlignment="Top" Width="105" />
         <Label Content="Description" Height="28" HorizontalAlignment="Left" Margin="48,91,0,0" x:Name="label1_Copy2" VerticalAlignment="Top" Width="105" />

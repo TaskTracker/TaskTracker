@@ -89,6 +89,7 @@ namespace PMgo
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
                     System.Windows.MessageBox.Show("document Was Added!");
+                    this.Close();
                 }
 
                 else if (this.typeBox.Text == "task")
@@ -101,6 +102,7 @@ namespace PMgo
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
                     System.Windows.MessageBox.Show("document Was Added!");
+                    this.Close();
                 }
 
                 else if (this.typeBox.Text == "subtask")
@@ -112,6 +114,7 @@ namespace PMgo
                     SQLiteCommand createCommand = new SQLiteCommand(query, conn);
                     createCommand.ExecuteNonQuery();
                     System.Windows.MessageBox.Show("document Was Added!");
+                    this.Close();
                 }             
 
                 
