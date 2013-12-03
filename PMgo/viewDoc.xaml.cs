@@ -92,6 +92,11 @@ namespace PMgo
             docText.ScrollToHome();
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            System.Windows.MessageBox.Show("Document was saved!");
+        }
+
        
        
 

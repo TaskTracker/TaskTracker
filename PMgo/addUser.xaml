@@ -14,7 +14,7 @@
         <Label Content="email" HorizontalAlignment="Left" Margin="10,234,0,0" VerticalAlignment="Top" Height="41" Width="103" FontSize="20"/>
         <Label Content="Phone Number" HorizontalAlignment="Left" Margin="9,282,0,0" VerticalAlignment="Top" Height="41" Width="165" FontSize="20"/>
         <Label Content="Temp Password" HorizontalAlignment="Left" Margin="8,328,0,0" VerticalAlignment="Top" Height="41" Width="166" FontSize="20"/>
-        <Button x:Name="addUserControl" Content="Add User" HorizontalAlignment="Left" Margin="467,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_1" />
+        <Button x:Name="addUserControl" Content="Add User" HorizontalAlignment="Left" Margin="467,478,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_1" />
         <Label Content="Office Location" HorizontalAlignment="Left" Margin="8,374,0,0" VerticalAlignment="Top" Height="41" Width="166" FontSize="20"/>
         <TextBox x:Name="emailField" HorizontalAlignment="Left" Height="41" Margin="166,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="248" FontSize="18" KeyboardNavigation.TabIndex="2">
             <TextBox.Effect>
@@ -36,7 +36,7 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <ListBox x:Name="userNameBox" HorizontalAlignment="Left" Height="312" Margin="477,123,0,0" VerticalAlignment="Top" Width="254" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18" FontFamily="Segoe UI Light" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Foreground="Black">
+        <ListBox x:Name="userNameBox" HorizontalAlignment="Left" Height="330" Margin="477,123,0,0" VerticalAlignment="Top" Width="254" SelectionChanged="ListBox_SelectionChanged_1" FontSize="18" FontFamily="Segoe UI Light" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Foreground="Black">
             <ListBox.Effect>
                 <DropShadowEffect/>
             </ListBox.Effect>
@@ -47,26 +47,32 @@
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button x:Name="deleteUserControl" Content="Delete User" HorizontalAlignment="Left" Margin="167,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_2"/>
-        <Button x:Name="modifyUserControl" Content="Modify User" HorizontalAlignment="Left" Margin="317,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_3"/>
+        <Button x:Name="deleteUserControl" Content="Delete User" HorizontalAlignment="Left" Margin="167,478,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_2"/>
+        <Button x:Name="modifyUserControl" Content="Modify User" HorizontalAlignment="Left" Margin="317,478,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_3"/>
         <TextBox x:Name="userIdField" HorizontalAlignment="Left" Height="41" Margin="232,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" FontSize="18" Visibility="Hidden">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
-        <Button Content="New User" HorizontalAlignment="Left" Margin="17,452,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_4"/>
-        <ListBox x:Name="assignedUsersBox" HorizontalAlignment="Left" Height="312" Margin="839,123,0,0" VerticalAlignment="Top" Width="254" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="18">
+        <Button Content="New User" HorizontalAlignment="Left" Margin="17,478,0,0" VerticalAlignment="Top" Width="145" Height="50" FontSize="18" Click="Button_Click_4"/>
+        <ListBox x:Name="assignedUsersBox" HorizontalAlignment="Left" Height="179" Margin="839,123,0,0" VerticalAlignment="Top" Width="254" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" FontSize="18">
             <ListBox.Effect>
                 <DropShadowEffect/>
             </ListBox.Effect>
         </ListBox>
-        <Button Content="Assign ---&gt;" HorizontalAlignment="Left" Height="48" Margin="741,201,0,0" VerticalAlignment="Top" Width="88" FontSize="14" Background="#FF64B970" Click="Button_Click_6"/>
-        <Button Content="&lt;--Remove" HorizontalAlignment="Left" Height="48" Margin="741,282,0,0" VerticalAlignment="Top" Width="88" FontSize="14" Click="Button_Click_5" Background="#FF64B970"/>
+        <Button Content="Assign ---&gt;" HorizontalAlignment="Left" Height="48" Margin="741,145,0,0" VerticalAlignment="Top" Width="88" FontSize="14" Background="#FF64B970" Click="Button_Click_6"/>
+        <Button Content="&lt;--Remove" HorizontalAlignment="Left" Height="48" Margin="741,213,0,0" VerticalAlignment="Top" Width="88" FontSize="14" Click="Button_Click_5" Background="#FF64B970"/>
         <Label Content="Assigned Users&#xD;&#xA;" HorizontalAlignment="Left" Margin="896,88,0,0" VerticalAlignment="Top" Width="148" Height="42" FontSize="20"/>
         <TextBlock x:Name="projectNameBox" HorizontalAlignment="Left" Height="58" Margin="535,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" FontSize="36" TextAlignment="Center"/>
         <TextBlock x:Name="current_txt" HorizontalAlignment="Left" Height="37" Margin="66,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" FontSize="16"/>
         <Label Content="User:" HorizontalAlignment="Left" Height="34" Margin="17,4,0,0" VerticalAlignment="Top" Width="62" FontSize="16"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Height="50" Margin="617,452,0,0" VerticalAlignment="Top" Width="143" FontSize="18" Click="Button_Click_7"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="50" Margin="617,478,0,0" VerticalAlignment="Top" Width="143" FontSize="18" Click="Button_Click_7"/>
+        <Label Content="Document Manager" HorizontalAlignment="Left" Margin="861,307,0,0" VerticalAlignment="Top" Height="41" Width="199" FontSize="20"/>
+        <Label Content="Document Reviewer" HorizontalAlignment="Left" Margin="861,378,0,0" VerticalAlignment="Top" Height="41" Width="199" FontSize="20"/>
+        <TextBox x:Name="documentManagerBox" HorizontalAlignment="Left" Height="46" Margin="839,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" FontSize="18"/>
+        <TextBox x:Name="documentReviewerBox" HorizontalAlignment="Left" Height="46" Margin="839,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" FontSize="18"/>
+        <Button Content="Assign/Remove" HorizontalAlignment="Left" Height="46" Margin="741,341,0,0" VerticalAlignment="Top" Width="88" Click="Button_Click_8"/>
+        <Button Content="Assign/Remove" HorizontalAlignment="Left" Height="46" Margin="741,407,0,0" VerticalAlignment="Top" Width="88" Click="Button_Click_9"/>
 
     </Grid>
 </Window>

@@ -15,8 +15,9 @@
         </TextBox>
         <TextBox x:Name="locationBox" Grid.Column="1" HorizontalAlignment="Left" Height="31" Margin="336,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Visibility="Hidden"/>
         <TextBlock x:Name="docName" Grid.Column="1" HorizontalAlignment="Left" Height="36" Margin="96,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288" FontSize="22" TextAlignment="Center"/>
-        <Button Content="Close" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="27,539,0,0" VerticalAlignment="Top" Width="244" FontSize="20" Click="Button_Click_1"/>
-        <CheckBox Content="Mark for Review" Grid.Column="1" HorizontalAlignment="Left" Margin="294,551,0,0" VerticalAlignment="Top" Height="29" Width="175" FontSize="18"/>
+        <Button Content="Close" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="27,539,0,0" VerticalAlignment="Top" Width="137" FontSize="20" Click="Button_Click_1"/>
+        <CheckBox Content="Mark for Review" Grid.Column="1" HorizontalAlignment="Left" Margin="322,551,0,0" VerticalAlignment="Top" Height="29" Width="175" FontSize="18"/>
+        <Button Content="Save" Grid.Column="1" HorizontalAlignment="Left" Height="49" Margin="169,539,0,0" VerticalAlignment="Top" Width="137" FontSize="20" Click="Button_Click_2"/>
 
 
     </Grid>
